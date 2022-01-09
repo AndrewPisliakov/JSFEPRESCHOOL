@@ -18,12 +18,30 @@ h1, h2 {
     font-family: 'Merriweather', serif;
     font-weight: 700;
     color: #bdae82;
+    margin: 0;
+}
+
+.section-title {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: 0em;
+    text-align: center;
+
 }
 
 
 .container {
     width: 1440;
     margin: 0 auto;
+}
+
+.header {
+    background-color: pink;
 }
 
 .nav-list {
@@ -96,5 +114,122 @@ h1, h2 {
 }
 
 .skills {
-    background-color: steelblue;
+    height: 482px;
+    background-color: #000000;
+}
+
+.skills-item-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.skills-item {
+    width: 320px;
+    height: 240px;
+}
+
+.skills-icon {
+    width: 62px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.skills-title {
+    margin-top: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+
+.skills-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* .section-title {
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+    text-align: center;
+}
+
+.section-title::before,
+.section-title::after {
+    content: '';
+    display: inline-block;
+    width: 350px;
+    height: 2px;
+    background: #BDAE82;
+    z-index: -1;
+    position: relative;
+}
+
+.section-title::before {
+    right: 15px;
+    margin: 0 0 0 -100%;
+}
+
+.section-title::after {
+    left: 15px;
+    margin: 0 -100% 0 0;
+} */
+
+.portfolio {
+    height: 1500px;
+    background-color: #000000;
+}
+
+.portfolio-group-btn {
+    display: block;
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.btn-dark {
+    height: 55px;
+    width: 220px;
+    color: #BDAE82;
+    border: solid 1px #BDAE82;;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+    background-color: #000000;
+
+}
+
+.portfolio-group-foto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.portfolio-foto {
+    flex: 0 1 calc(100%/3 - 25px*2);
+    padding: 25px;
+    width: 450px;
+    height: 560px;
+}
+
+.portfolio-foto img {
+    width: 100%;
 }
