@@ -9,25 +9,22 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
+    color: #ffffff;
     margin: 0;
     padding: 0;
 }
 
-h1-h6 {
+h1, h2 {
     font-family: 'Merriweather', serif;
     font-weight: 700;
+    color: #bdae82;
 }
 
-.header {
-    min-height: 90px;
-}
 
 .container {
     width: 1440;
     margin: 0 auto;
-    background-color: yellowgreen;
 }
-
 
 .nav-list {
     display: flex;
@@ -44,13 +41,60 @@ h1-h6 {
     text-decoration: none;
 }
 
-.nav-item {}
 
 .header_logo {
     width: 50px;
     height: 50px;
+
 }
 
-nav {
+.nav {
     margin-left: auto;
+}
+
+.hero {
+    height: 820px;
+    background-color: tomato;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 60px;
+    line-height: 120px;
+    /* letter-spacing: 0em; */
+    text-align: left;
+    color: #ffffff;
+
+}
+
+.hero-wrapper {
+    height: 330px;
+    width: 500px;
+    padding-top: 160px;
+    padding-left: 80px;
+}
+
+
+.hero-content {
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+
+.btn-gold {
+    width: 220px;
+    height: 55px;
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #000000;
+    background: #BDAE82;
+    border: none;
+}
+
+.skills {
+    background-color: steelblue;
 }
