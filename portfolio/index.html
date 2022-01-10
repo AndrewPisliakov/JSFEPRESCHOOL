@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="./normalize.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./assets/favicon/icons8-photo-camera-64.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,38 +18,71 @@
     <title>portfolio</title>
 </head>
 
-<body>
+<body class="body-home body-fixed-header">
     <header class="header">
         <div class="container">
-            <a href="#" class="header_logo">
-                <img src="./assets/svg/logo.svg" alt="logo">
-            </a>
-            <nav>
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                    <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                    <li class="nav-item"><a href="#video" class="nav-link">Video</a></li>
-                    <li class="nav-item"><a href="#price" class="nav-link">Price</a></li>
-                    <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
-                </ul>
-            </nav>
-            <span class="language">en / ru</span>
+            <div class="header-wrapper">
+                <div class="header-list">
+                    <div class="header-list-item">
+                        <a href="#" class="header_logo">
+                            <img src="./assets/svg/logo.svg" alt="logo">
+                        </a>
+                    </div>
+                    <div class="header-list-item header-list-item-menu">
+                        <nav class="header-nav">
+                            <ul class="nav-list">
+                                <li class="nav-item">
+                                    <a href="#skills" class="nav-link">Skills</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#video" class="nav-link">Video</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#price" class="nav-link">Price</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#contacts" class="nav-link">Contacts</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="header-list-item">
+                        <nav class="header-nav">
+                            <ul class="nav-list nav-list-lang">
+                                <li class="nav-item active">
+                                    <span class="nav-link" role="button">en</span>
+                                </li>
+                                <li class="nav-item">
+                                    <span class="nav-link" role="button">ru</span>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </header>
     <main class="main">
         <div class="container">
             <section class="hero">
+                <div class="hero-img">
+                    <img src="./assets/img/bg.jpg" alt="hero">
+                </div>
                 <div class="hero-wrapper">
                     <h1>Alexa Rise</h1>
                     <p class="hero-content">Save sincere emotions, romantic feelings and happy moments of life together
                         with
                         professional photographer Alexa Rise</p>
-                    <button class="btn-gold">Hire me</button>
+                    <button class="btn btn-min-width btn-gold">Hire me</button>
                 </div>
             </section>
 
             <section class="skills" id="skills">
-                <h2 class="section-title">Skills</h2>
+                <h2 class="section-title"><span class="section-title-text">Skills</span></h2>
                 <div class="skills-item-wrapper">
                     <div class="skills-item">
                         <img src="./assets/svg/camera 1.svg" alt="camera-icon" class="skills-icon">
@@ -76,10 +110,10 @@
             <section class="portfolio" id="portfolio">
                 <h2 class="section-title">Portfolio</h2>
                 <div class="portfolio-group-btn">
-                    <button class="btn-dark">Winter</button>
-                    <button class="btn-dark">Spring</button>
-                    <button class="btn-dark">Summer</button>
-                    <button class="btn-dark">Autumn</button>
+                    <button class="btn btn-min-width btn-transparent-primary">Winter</button>
+                    <button class="btn btn-min-width btn-transparent-primary">Spring</button>
+                    <button class="btn btn-min-width btn-transparent-primary">Summer</button>
+                    <button class="btn btn-min-width btn-transparent-primary">Autumn</button>
                 </div>
                 <div class="portfolio-group-foto">
                     <img src="./assets/img/portfolio-img-1.jpg" alt="people" class="portfolio-foto">
@@ -106,9 +140,9 @@
                             120 photos in color <br>
                             12 photos in retouch <br>
                             Readiness 2-3 weeks <br>
-                            Make up, visage 
+                            Make up, visage
                         </p>
-                        <button class="btn-gold">Order shooting</button>
+                        <button class="btn btn-min-width btn-gold">Order shooting</button>
                     </div>
                     <div class="price-item">
                         <div class="price-title">Premium</div>
@@ -120,7 +154,7 @@
                             Readiness 1-2 weeks <br>
                             Make up, visage
                         </p>
-                        <button class="btn-gold">Order shooting</button>
+                        <button class="btn btn-min-width btn-gold">Order shooting</button>
                     </div>
                     <div class="price-item">
                         <div class="price-title">Gold</div>
