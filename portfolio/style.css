@@ -233,3 +233,25 @@ h1, h2 {
 .portfolio-foto img {
     width: 100%;
 }
+
+.video {
+    height: 945px;
+    background-color: #000000;
+}
+
+.video-foto {
+    display: block;
+    margin: 0 auto;
+    width: 1400px;
+    height: 705px;
+
+}
+
+.video-foto img {
+    width: 100%;
+}
+
+.price {
+    height: 845px;
+    background-color: #000000;
+}
