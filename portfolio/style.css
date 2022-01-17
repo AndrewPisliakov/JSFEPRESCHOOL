@@ -425,6 +425,11 @@ h1, .h1-typo {
     width: 100%;
 }
 
+
+.container-video {
+    position: relative;
+}
+
 .video {
     /* height: 945px; */
     background-color: #000000;
@@ -441,6 +446,26 @@ h1, .h1-typo {
 .video-foto img {
     width: 100%;
 }
+
+.play-hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+}
+
+svg:hover #svg-hover {
+    fill: #BDAE82;
+}
+
+.play-hover img {
+    width: 100%;
+}
+
+
 
 .price {
     /*  height: 845px; */
@@ -510,6 +535,33 @@ h2 {
     margin: 0;
 }
 
+.contacts {
+    position: relative;
+}
+
+.contacts-container {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 450px;
+    padding-right: 20px;
+    padding-bottom: 200px;
+
+}
+
+
+/* .hero-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 500px;
+    padding-right: 80px;
+    padding-left: 80px;
+    padding-bottom: 80px;
+} */
+
 .contact-img img {
     display: inline-block;
     width: 100%;
@@ -521,12 +573,8 @@ h2 {
 
 }
 
-.contacts-container {
-    width: 450px;
-}
-
 .section-title-contact {
-    margin: 0;
+    margin-bottom: 40px;
     padding: 0;
     text-align: left;
 }
@@ -545,9 +593,20 @@ h2 {
     background: transparent;
     border: 2px solid #BDAE82;
     color: #BDAE82;
+    width: 100%;
+    height: 50px;
+    padding: 5px 0 5px 20px;
 }
 
-input::placeholder, 
+.form-wrapper textarea {
+    height: 100%;
+}
+
+.form-row input, textarea {
+    margin-bottom: 20px;
+}
+
+input::placeholder,
 textarea::placeholder {
     font-family: 'Inter';
     font-style: normal;
@@ -555,15 +614,5 @@ textarea::placeholder {
     font-size: 20px;
     color: #BDAE82;
 
-}
 
-/* .hero-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 500px;
-    padding-right: 80px;
-    padding-left: 80px;
-    padding-bottom: 80px;
-} */
+}
