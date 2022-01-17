@@ -181,6 +181,11 @@ h1, .h1-typo {
     padding-right: 30px;
 }
 
+.active {
+    color: #BDAE82;
+}
+
+
 .nav-link {
     text-decoration: none;
 }
@@ -456,15 +461,13 @@ h1, .h1-typo {
     transform: translate(-50%, -50%);
 
 }
-
-svg:hover #svg-hover {
-    fill: #BDAE82;
-}
-
 .play-hover img {
     width: 100%;
 }
 
+svg:hover #svg-hover {
+    fill: #BDAE82;
+}
 
 
 .price {
@@ -550,18 +553,6 @@ h2 {
 
 }
 
-
-/* .hero-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 500px;
-    padding-right: 80px;
-    padding-left: 80px;
-    padding-bottom: 80px;
-} */
-
 .contact-img img {
     display: inline-block;
     width: 100%;
@@ -613,6 +604,44 @@ textarea::placeholder {
     font-weight: normal;
     font-size: 20px;
     color: #BDAE82;
+}
 
+.copy-footer {
+    font-size: 40px;
+    color: red;
+}
 
+.foooter-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 150px;
+    padding-left: 20px;
+}
+
+.footer-text, .footer-copy {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover {
+    color: #bdae82;
+}
+
+.footer-links {
+    color: #ffffff;
+}
+
+.footer-text {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.footer_social_item {
+    padding-right: 20px;
+    padding-left: 20px;
 }
