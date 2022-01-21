@@ -6,15 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./normalize.css">
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./assets/favicon/icons8-photo-camera-64.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
+
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/_media.css">
+   
     <title>portfolio</title>
 </head>
 
@@ -31,25 +33,31 @@
                         </a>
                     </div>
                     <div class="header-list-item header-list-item-menu">
-                        <nav class="header-nav">
-                            <ul class="nav-list">
-                                <li class="nav-item">
-                                    <a href="#skills" class="nav-link">Skills</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#portfolio" class="nav-link">Portfolio</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#video" class="nav-link">Video</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#price" class="nav-link">Price</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#contacts" class="nav-link">Contacts</a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <div class="main-navbar ">
+                            <nav class="header-nav header-nav-main">
+                                <ul class="nav-list">
+                                    <li class="nav-item">
+                                        <a href="#skills" class="nav-link">Skills</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#portfolio" class="nav-link">Portfolio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#video" class="nav-link">Video</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#price" class="nav-link">Price</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#contacts" class="nav-link">Contacts</a>
+                                    </li>
+                                </ul>
+                                <span class="nav-close" role="button">
+                                    <!-- сделать крестик -->
+                                    Х
+                                </span>
+                            </nav>
+                        </div>
                     </div>
                     <div class="header-list-item">
                         <nav class="header-nav">
@@ -63,6 +71,21 @@
                             </ul>
                         </nav>
                     </div>
+                    <div class="header-list-item hidden-desktop">
+                        <nav class="header-nav">
+                            <ul class="nav-list">
+                                <li class="nav-item">
+                                    <div class="hamburger">
+                                        <span>-</span>
+                                        <span>-</span>
+                                        <span>-</span>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </nav>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -71,7 +94,8 @@
         <div class="container">
             <section class="hero">
                 <div class="hero-img">
-                    <img src="./assets/img/bg.jpg" alt="hero">
+                    <img src="./assets/img/bg.jpg" alt="hero" class="hidden-mobile">
+                    <img src="./assets/img/bg-mobile.jpg" alt="hero" class="hidden-desktop">
                 </div>
                 <div class="hero-wrapper">
                     <h1>Alexa Rise</h1>
@@ -88,22 +112,22 @@
                     <div class="skills-item">
                         <img src="./assets/svg/camera_1.svg" alt="video-icon" class="skills-icon">
                         <p class="skills-title">Digital photography</p>
-                        <p class="skills-content">High-quality photos in the studio and on the nature</p>
+                        <p class="skills-content">High-quality photos in the studio <br> and on the nature</p>
                     </div>
                     <div class="skills-item">
                         <img src="./assets/svg/video_1.svg" alt="video-icon" class="skills-icon">
                         <p class="skills-title">Video shooting</p>
-                        <p class="skills-content">Capture your moments so that they always stay with you</p>
+                        <p class="skills-content">Capture your moments so that <br> they always stay with you</p>
                     </div>
                     <div class="skills-item">
                         <img src="./assets/svg/image_1.svg" alt="mountain-icon" class="skills-icon">
                         <p class="skills-title">Retouch</p>
-                        <p class="skills-content">I strive to make photography surpass reality</p>
+                        <p class="skills-content">I strive to make photography <br> surpass reality</p>
                     </div>
                     <div class="skills-item">
                         <img src="./assets/svg/mic_1.svg" alt="mic-icon" class="skills-icon">
                         <p class="skills-title">Audio</p>
-                        <p class="skills-content">Professional sounds recording for video, advertising, portfolio</p>
+                        <p class="skills-content">Professional sounds recording <br> for video, advertising, portfolio</p>
                     </div>
                 </div>
             </section>

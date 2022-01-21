@@ -1,5 +1,3 @@
-@import "_media.css";
-
 
 * {
     box-sizing: border-box;
@@ -15,7 +13,7 @@ body {
 }
 
 .container {
-    width: 1440px;
+    min-width: 768px;
     margin: 0 auto;
 }
 
@@ -169,6 +167,9 @@ h1, .h1-typo {
     background-color: transparent;
 }
 
+.nav-close {
+    display: none;
+}
 
 .nav-list {
     display: flex;
@@ -244,10 +245,6 @@ h1, .h1-typo {
 }
 
 
-
-
-
-
 .hero {
     position: relative;
 }
@@ -299,12 +296,6 @@ h1, .h1-typo {
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-
-.skills-item {
-    width: 320px;
-    height: 240px;
 }
 
 .skills-icon {
@@ -395,10 +386,11 @@ h1, .h1-typo {
     flex: 0 1 calc(100%/3 - 25px*2);
     padding: 25px;
     width: 450px;
-    height: 560px;
+    
 }
 
 .portfolio-foto img {
+    display: block;
     width: 100%;
 }
 
@@ -415,9 +407,6 @@ h1, .h1-typo {
 .video-foto {
     display: block;
     margin: 0 auto;
-    width: 1400px;
-    height: 705px;
-
 }
 
 .video-foto img {
@@ -617,4 +606,6 @@ a:hover {
     padding-right: 20px;
     padding-left: 20px;
 }
+
+
 
