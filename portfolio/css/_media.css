@@ -23,11 +23,12 @@
     .hidden-mobile {
         display: none !important;
     }
+
     .main-navbar {
         display: none;
         position: fixed;
         z-index: 1002;
-        top:  0;
+        top: 0;
         right: 0;
         bottom: 0;
         left: 0;
@@ -36,7 +37,7 @@
 
     .main-navbar.activeNavbar {
         display: block;
-    } 
+    }
 
     .main-navbar .header-nav-main {
         position: absolute;
@@ -50,12 +51,9 @@
     }
 
     .main-navbar .nav-list {
-
-    flex-direction: column;
-    align-items: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }
-
-
 
     .main-navbar .nav-close {
         display: block;
@@ -64,14 +62,37 @@
         right: 64px;
     }
 
-    .hero {
-        width: 768px;
-        min-height: 590px;
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 44px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .hamburger div {
+        width: 100%;
+        margin-bottom: 10px;
+        height: 3px;
+        background-color: #ffffff;
+    }
+
+    .header a {
+        padding-left: 40px;
+    }
+
+    .nav-list-lang {
+        padding-bottom: 15px;
     }
 
 
-    .hero-img img {
-        width: 100%;
+
+    .hero-wrapper {
+        top: 54%;
+        padding-left: 59px;
+        padding-right: 50px;
+
     }
 
     .hero h1 {
@@ -81,44 +102,52 @@
         line-height: 2;
         letter-spacing: 0em;
         text-align: left;
-
     }
-
-
-    .hero-img {
-        /* height: 590px; */
-        background-repeat: no-repeat;
-    }
-
 
     .hero-content {
         font-style: normal;
         line-height: 24px;
     }
 
+
+    .section-title-text:before,
+    .section-title-text:after {
+        width: 182px;
+    }
+
+    .section-title {
+        margin-top: 80px;
+        margin-bottom: 36px;
+    }
+
     .skills-item-wrapper {
         flex-wrap: wrap;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .skills-icon {
+        margin-bottom: 30px;
+    }
+
+    .skills-content {
+        margin-bottom: 40px;
     }
 
     .skills-item {
-        width: 50%
+        max-width: 300px;
     }
 
     .portfolio-group-btn {
-        margin: 0 auto;
-        width: 500px;
-
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: center
     }
 
     .portfolio-group-foto {
         justify-content: space-around;
     }
-
-    /*     .section-title-text:before,
-    .section-title-text:after {
-        content: "";
-        width: 182px;
-    } */
 
     .section-title-text {
         font-size: 32px;
@@ -127,10 +156,28 @@
         text-align: center;
     }
 
-
+    .portfolio-foto img {
+        width: none;
+    }
 
     .container-video img {
-        width: 768px;
+        display: block;
+        width: 100vw;
     }
+
+    .play-hover svg {
+        width: 75px;
+        height: 75px;
+    }
+
+    .price-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .price-item {
+        width: 420px; 
+        margin-bottom: 50px;
+    }
+
 
 }

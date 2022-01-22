@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    min-width: 768px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -393,8 +393,6 @@ h1, .h1-typo {
     display: block;
     width: 100%;
 }
-
-
 .container-video {
     position: relative;
 }
