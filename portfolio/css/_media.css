@@ -179,5 +179,25 @@
         margin-bottom: 50px;
     }
 
+    .contact-img {
+        height: 100vh;
+    }
+
+    
+    .contacts-container {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+        /* left: 0;
+        top: 0;
+        margin: 0 auto;
+        padding: 0; */
+    }
+
+    .foooter-wrapper {
+        flex-direction: column;
+    }
+
 
 }
