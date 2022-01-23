@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -12,7 +13,7 @@ body {
 }
 
 .container {
-    width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -166,6 +167,9 @@ h1, .h1-typo {
     background-color: transparent;
 }
 
+.nav-close {
+    display: none;
+}
 
 .nav-list {
     display: flex;
@@ -241,10 +245,6 @@ h1, .h1-typo {
 }
 
 
-
-
-
-
 .hero {
     position: relative;
 }
@@ -296,12 +296,6 @@ h1, .h1-typo {
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-
-.skills-item {
-    width: 320px;
-    height: 240px;
 }
 
 .skills-icon {
@@ -371,38 +365,7 @@ h1, .h1-typo {
     right: 100%;
 }
 
-
-
-/* .section-title {
-    position: relative;
-    z-index: -1;
-    overflow: hidden;
-    text-align: center;
-}
-
-.section-title::before,
-.section-title::after {
-    content: '';
-    display: inline-block;
-    width: 350px;
-    height: 2px;
-    background: #BDAE82;
-    z-index: -1;
-    position: relative;
-}
-
-.section-title::before {
-    right: 15px;
-    margin: 0 0 0 -100%;
-}
-
-.section-title::after {
-    left: 15px;
-    margin: 0 -100% 0 0;
-} */
-
 .portfolio {
-    /* height: 1500px; */
     background-color: #000000;
 }
 
@@ -423,14 +386,13 @@ h1, .h1-typo {
     flex: 0 1 calc(100%/3 - 25px*2);
     padding: 25px;
     width: 450px;
-    height: 560px;
+    
 }
 
 .portfolio-foto img {
+    display: block;
     width: 100%;
 }
-
-
 .container-video {
     position: relative;
 }
@@ -443,9 +405,6 @@ h1, .h1-typo {
 .video-foto {
     display: block;
     margin: 0 auto;
-    width: 1400px;
-    height: 705px;
-
 }
 
 .video-foto img {
@@ -645,3 +604,6 @@ a:hover {
     padding-right: 20px;
     padding-left: 20px;
 }
+
+
+
