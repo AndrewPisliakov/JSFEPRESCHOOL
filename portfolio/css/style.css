@@ -270,7 +270,6 @@ h1, .h1-typo {
     display: inline-block;
     width: 100%;
     height: auto;
-
 }
 
 
@@ -292,6 +291,7 @@ h1, .h1-typo {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .skills-icon {

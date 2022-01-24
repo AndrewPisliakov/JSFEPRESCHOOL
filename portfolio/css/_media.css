@@ -47,12 +47,14 @@
         width: 620px;
         overflow-y: auto;
         background-color: #000000;
-        padding: 134px 127px;
+        padding: 130px 78px;
     }
 
     .main-navbar .nav-list {
         flex-direction: column;
         align-items: flex-start;
+        font-size: 35px;
+        line-height: 2.5;
     }
 
     .main-navbar .nav-close {
@@ -86,10 +88,12 @@
         padding-bottom: 15px;
     }
 
-
+    .hero {
+        height: 590px;
+    }
 
     .hero-wrapper {
-        top: 168px;
+        top: 172px;
         padding: 0;
         margin-left: 60px;
     }
@@ -116,7 +120,7 @@
 
     .section-title-text:before,
     .section-title-text:after {
-        width: 182px;
+        width: 120px;
     }
 
     .section-title {
@@ -128,7 +132,17 @@
         flex-wrap: wrap;
         margin-left: 20px;
         margin-right: 20px;
+        margin-bottom: 13px;
     }
+
+    .skills-item-wrapper>.skills-item {
+        margin: 5px;
+    }
+
+    .skills-item {
+        width: 300px;
+    }
+
 
     .skills-icon {
         margin-bottom: 30px;
@@ -142,11 +156,23 @@
         max-width: 300px;
     }
 
+    .m-mobile {
+        margin-bottom: 50px;
+        margin-top: 90px;
+    }
+
     .portfolio-group-btn {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        align-content: center
+        align-content: center;
+        width: 450px;
+        margin: auto;
+        padding-bottom: 40px;
+    }
+
+    .portfolio-group-btn>button {
+        margin: 2.5px;
     }
 
     .portfolio-group-foto {
@@ -164,24 +190,38 @@
         width: none;
     }
 
+    .video>h2 {
+        margin: 0;
+        margin-top: 65px;
+        margin-bottom: 55px;
+    }
+
     .container-video img {
         display: block;
-        width: 100vw;
+        width: 106vw;
+    }
+
+    .play-hover {
+        top: 52%
     }
 
     .play-hover svg {
-        width: 75px;
-        height: 75px;
+        width: 73px;
+        height: 73px;
+    }
+
+    .price>.section-title {
+        margin-top: 85px;
+        margin-bottom: 50px;
     }
 
     .price-wrapper {
         flex-wrap: wrap;
         margin-bottom: 0;
-
     }
 
-    .price-wrapper :last-child {
-        margin-bottom: 80px;
+    .price-wrapper:last-child {
+        margin-bottom: 35px;
     }
 
     .btn-price-conteiner {
@@ -189,27 +229,48 @@
     }
 
     .price-item {
-        width: 420px; 
-        margin-bottom: 50px;
+        width: 420px;
+        margin-bottom: 40px;
     }
 
-    .contact-img {
-        height: 100vh;
-    }
 
-    
     .contacts-container {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    
-        /* left: 0;
-        top: 0;
-        margin: 0 auto;
-        padding: 0; */
+        margin: 0;
+        padding: 0;
+        right: 21%;
+        top: 38%;
+
+    }
+
+    .contact-img img {
+        height: 600px;
+    }
+
+    .section-title-contact {
+        text-align: center;
+    }
+
+    .form-row>button {
+        display: block;
+        margin: auto;
+    }
+
+    textarea {
+        margin-bottom: 18px;
     }
 
     .foooter-wrapper {
         flex-direction: column;
+        padding: 0;
+    }
+
+    .footer-simbol {
+        margin-top: 18px;
+        line-height: 1.15;
+    }
+
+    .footer_social_item {
+        padding-right: 6px;
+        padding-left: 9px;
     }
 }
