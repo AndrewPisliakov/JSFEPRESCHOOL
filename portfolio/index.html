@@ -53,8 +53,6 @@
                                     </li>
                                 </ul>
                                 <span class="nav-close" role="button">
-                                    <!-- сделать крестик -->
-                                    Х
                                 </span>
                             </nav>
                         </div>
@@ -99,7 +97,7 @@
                 </div>
                 <div class="hero-wrapper">
                     <h1>Alexa Rise</h1>
-                    <p class="hero-content">Save sincere emotions, romantic feelings and happy moments of life together
+                    <p class="hero-content mb-60">Save sincere emotions, romantic feelings and happy moments of life together
                         with
                         professional photographer Alexa Rise</p>
                     <button class="btn btn-min-width btn-gold">Hire me</button>
@@ -133,7 +131,7 @@
             </section>
 
             <section class="portfolio" id="portfolio">
-                <h2 class="section-title"><span class="section-title-text">Portfolio</span></h2>
+                <h2 class="section-title m-mobile"><span class="section-title-text">Portfolio</span></h2>
                 <div class="portfolio-group-btn">
                     <button class="btn btn-min-width btn-transparent-primary">Winter</button>
                     <button class="btn btn-min-width btn-transparent-primary">Spring</button>
@@ -212,7 +210,10 @@
             </section>
             <section class="contacts" id="contacts">
                 <div class="contact-img">
-                    <img src="./assets/img/contacts.jpg" alt="">
+
+                    <img src="./assets/img/contacts.jpg" alt="contact-foto" class="hidden-mobile">
+                    <img src="./assets/img/contacts_mobile.jpg" alt="contact-foto-mobile" class="hidden-desktop">
+
                 </div>
                 <div class="contacts-container">
                     <h2 class="section-title section-title-contact"><span
@@ -226,7 +227,7 @@
                                 <input name="tel" type="tel" placeholder="Phone">
                             </li>
                             <li class="form-row">
-                                <textarea name="message" rows="3" placeholder="Message"></textarea>
+                                <textarea name="message" rows="4" placeholder="Message"></textarea>
                             </li>
                             <li class="form-row">
                                 <button class="btn btn-min-width btn-gold">Send message</button>
