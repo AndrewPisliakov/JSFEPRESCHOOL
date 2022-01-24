@@ -42,7 +42,7 @@
     .main-navbar .header-nav-main {
         position: absolute;
         top: 0;
-        right: 0;
+        right: 37px;
         bottom: 0;
         width: 620px;
         overflow-y: auto;
@@ -55,13 +55,6 @@
         align-items: flex-start;
         font-size: 35px;
         line-height: 2.5;
-    }
-
-    .main-navbar .nav-close {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 64px;
     }
 
     .hamburger {
@@ -273,4 +266,36 @@
         padding-right: 6px;
         padding-left: 9px;
     }
+
+
+    .main-navbar  .nav-close {
+        display: block;
+        position: absolute;
+        top: 34px;
+        right: 80px;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        transition: ease 0.3s;
+    }
+
+    .nav-close::before,
+    .nav-close::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        display: block;
+        width: 55px;
+        height: 2px;
+        background: #ffffff;
+    }
+
+    .nav-close::before {
+        transform: rotate(45deg);
+    }
+
+    .nav-close::after {
+        transform: rotate(-45deg);
+    }
+
 }
