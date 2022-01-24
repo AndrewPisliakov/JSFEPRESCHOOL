@@ -261,30 +261,25 @@ h1, .h1-typo {
 
 .hero-wrapper {
     position: absolute;
-    top: 50%;
+    top: 250px;
     left: 0;
-    transform: translateY(-50%);
-    width: 500px;
-    padding-right: 80px;
-    padding-left: 80px;
-    padding-bottom: 80px;
+    margin-left: 80px;
 }
 
 .hero-img img {
     display: inline-block;
     width: 100%;
     height: auto;
-
 }
+
 
 .hero-content {
     font-size: 20px;
     line-height: 2;
     letter-spacing: 0em;
     text-align: left;
+    width: 500px;
 }
-
-
 
 
 .skills {
@@ -296,6 +291,7 @@ h1, .h1-typo {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .skills-icon {
