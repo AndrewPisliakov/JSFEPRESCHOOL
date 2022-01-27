@@ -1,24 +1,22 @@
 
-let elemGamburher = document.querySelector('.hamburger');
-let mainNavbar = document.querySelector('.main-navbar');
+const elemGamburher = document.querySelector('.hamburger');
+const mainNavbar = document.querySelector('.main-navbar');
 
-elemGamburher.addEventListener('click', function() {
-    alert('нажали на гамбургер');
-    
+elemGamburher.addEventListener('click', () => {
     mainNavbar.classList.toggle('activeNavbar');
     //дописать чтобы гамбургем менялся на крестик
 });
 
-let navList = document.querySelector('.nav-list');
+const navList = document.querySelector('.nav-list');
 
-navList.addEventListener('click', function() {
+navList.addEventListener('click', () => {
    if(mainNavbar.classList.contains('activeNavbar')) {
        // код удаляющий активный класс у гамбургера
        mainNavbar.classList.remove('activeNavbar'); 
    }
 })
 
-let closeHamburger = document.querySelector('.nav-close');
-closeHamburger.addEventListener('click', function() {
+const closeHamburger = document.querySelector('.nav-close');
+closeHamburger.addEventListener('click', () => {
     mainNavbar.classList.remove('activeNavbar');
 }); 
