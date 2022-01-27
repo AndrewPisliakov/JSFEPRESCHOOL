@@ -239,7 +239,7 @@ h1, .h1-typo {
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
-    line-height: 80px;
+    line-height: 4;
     letter-spacing: 0em;
     text-align: center;
 }
@@ -309,7 +309,7 @@ h1, .h1-typo {
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    line-height: 40px;
+    line-height: 2;
     letter-spacing: 0em;
     text-align: center;
 
@@ -320,7 +320,7 @@ h1, .h1-typo {
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 36px;
+    line-height: 2;
     letter-spacing: 0em;
     text-align: center;
     margin-top: 0;
@@ -380,7 +380,7 @@ h1, .h1-typo {
 }
 
 .portfolio-foto {
-    flex: 0 1 calc(100%/3);
+    flex: 0 1 33.33333%;
     padding: 12.5px;
     
 }
@@ -401,18 +401,20 @@ h1, .h1-typo {
 .video-foto {
     display: block;
     margin: 0 auto;
+    width: 100%;
 }
 
 .video-foto img {
+
     width: 100%;
 }
 
 .play-hover {
     position: absolute;
-    top: 50%;
+     top: 50%;
     left: 50%;
     display: block;
-    margin-right: -50%;
+    margin-right: -50%; 
     transform: translate(-50%, -50%);
 
 }
@@ -442,7 +444,7 @@ svg:hover #svg-hover {
     font-size: 28px;
     font-style: normal;
     font-weight: 700;
-    line-height: 56px;
+    line-height: 2;
     letter-spacing: 0em;
     text-align: center;
 
@@ -455,7 +457,7 @@ svg:hover #svg-hover {
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
-    line-height: 48px;
+    line-height: 2;
     letter-spacing: 0em;
     text-align: center;
     color: #BDAE82;
@@ -468,7 +470,7 @@ svg:hover #svg-hover {
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 36px;
+    line-height: 2;
     letter-spacing: 0em;
     text-align: center;
 
@@ -484,7 +486,7 @@ svg:hover #svg-hover {
     border-radius: 0px;
 }
 
-.btn-price-conteiner button {
+.btn-price-container button {
     display: block;
     margin: 0 auto;
 }
@@ -535,7 +537,7 @@ h2 {
     padding: 0;
 }
 
-.form-wrapper input, textarea {
+.form-wrapper input, .form-wrapper textarea {
     background: transparent;
     border: 2px solid #BDAE82;
     color: #BDAE82;
@@ -548,12 +550,12 @@ h2 {
     height: 100%;
 }
 
-.form-row input, textarea {
+.form-row {
     margin-bottom: 20px;
 }
 
-input::placeholder,
-textarea::placeholder {
+.form-wrapper input::placeholder,
+.form-wrapper textarea::placeholder {
     font-family: 'Inter';
     font-style: normal;
     font-weight: normal;
@@ -608,27 +610,29 @@ a:hover {
     }
 }
 
-@media (max-width : 768px) {
+@media only screen and (max-width : 768px) {
     .hidden-mobile {
         display: none !important;
     }
 
     .main-navbar {
-        /* display: none; */
-        position: fixed;
+        display: none;  
+        /* position: fixed;
         z-index: 1002;
         top: 0;
-        right: -620px;
+        right: -620px; */
+        transform: translateX(200%);
         bottom: 0;
         left: 770px;
         background: rgba(0, 0, 0, 0.5);
-        transition: 0.5s;
+        transition: transform 0.5s ease;
     }
 
     .main-navbar.activeNavbar {
         display: block;
         right: 0;
         left: 0;
+        transform: translateX(0);
     }
 
    
@@ -636,7 +640,7 @@ a:hover {
     .main-navbar .header-nav-main {
         position: absolute;
         top: 0;
-        right: 37px;
+        right: 0;
         bottom: 0;
         width: 620px;
         overflow-y: auto;
@@ -700,7 +704,7 @@ a:hover {
         width: 390px;
     }
 
-    .mb-60 {
+    .mb-60-mobile {
         margin-bottom: 60px;
     }
 
@@ -842,7 +846,7 @@ a:hover {
         margin: auto;
     }
 
-    textarea {
+    .form-wrapper textarea {
         margin-bottom: 18px;
     }
 
