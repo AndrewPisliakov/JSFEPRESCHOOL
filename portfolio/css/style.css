@@ -379,13 +379,13 @@ h1, .h1-typo {
     justify-content: center;
 }
 
-.portfolio-foto {
+.portfolio-image {
     flex: 0 1 33.33333%;
     padding: 12.5px;
     
 }
 
-.portfolio-foto img {
+.portfolio-image img {
     display: block;
     width: 100%;
 }
@@ -777,7 +777,7 @@ a:hover {
         text-align: center;
     }
 
-    .portfolio-foto img {
+    .portfolio-image img {
         width: none;
     }
 

@@ -1,4 +1,8 @@
 
+// Burger menu
+
+//======================================================
+
 const elemGamburher = document.querySelector('.hamburger');
 const mainNavbar = document.querySelector('.main-navbar');
 
@@ -20,3 +24,18 @@ const closeHamburger = document.querySelector('.nav-close');
 closeHamburger.addEventListener('click', () => {
     mainNavbar.classList.remove('activeNavbar');
 }); 
+
+
+// sort img 
+
+//============================================================
+
+/* const portfolioImgs = document.querySelectorAll('.portfolio-image');
+
+    portfolioImgs.forEach((elem, index) => {
+    console.log(elem, elem.alt);
+}); */
+
+
+ console.log(document.querySelector('h2').innerText);
+ //.forEach((elem) => console.log(elem.innerHTML));
