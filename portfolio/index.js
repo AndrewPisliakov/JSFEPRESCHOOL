@@ -28,20 +28,19 @@ closeHamburger.addEventListener('click', () => {
 
 // sort img 
 
-
+//=======================================================
 
 const portfolioGroupBtnContainer = document.querySelector('.portfolio-group-btn');
 const portfolioGroupBtn = document.querySelectorAll('.btn-portfolio');
 
-
 portfolioGroupBtnContainer.addEventListener('click', (event) => {
     let button = event.target;
-    let timeOfTheYear = button.dataset;
+    let timeOfTheYear = button.dataset.season;
 
     //работаем с кнопками перебирая их и меняем bg
 
     portfolioGroupBtn.forEach(elem => {
-        if(elem.classList.contains('btn-active')) {
+        if (elem.classList.contains('btn-active')) {
             elem.classList.remove('btn-active');
         }
     });
@@ -49,8 +48,12 @@ portfolioGroupBtnContainer.addEventListener('click', (event) => {
     if (button.classList.contains('btn-portfolio')) {
         button.classList.add('btn-active');
     }
-    
+
     // работаем с изображениями
+    let portfolioImgs = document.querySelectorAll('.portfolio-image');
     
+    portfolioImgs.forEach( (elem, index) => {
+        elem.src = `./assets/img/${timeOfTheYear}/${index + 1}.jpg`;
+    });
 });
 
