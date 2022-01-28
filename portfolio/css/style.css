@@ -109,6 +109,11 @@ h1, .h1-typo {
     border-color: #BDAE82;
 }
 
+.btn-active {
+    color: #ffffff;
+    background-color: #BDAE82;
+}
+
 .btn-transparent-primary:hover, .btn-transparent-primary.active {
     color: #ffffff;
     background-color: #BDAE82;
