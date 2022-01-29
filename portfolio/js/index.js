@@ -91,14 +91,33 @@ buttonsLang.forEach((button) => {
         //================================
 
         //console.log(currentButton.dataset.lang, typeof currentButton.dataset.lang);
-        if (currentButton.dataset.lang === 'en') {
-            console.log(true);
-        } else {
-            console.log(false);
-        }
+
+        let currentLang = currentButton.dataset.lang;
+        console.log(currentLang);
+
+        translate(currentLang);
 
 
     });
 });
+
+// Function for translate
+
+//===============================
+
+function translate(lang) {
+    let dataAtrebuts = document.querySelectorAll('[data-i18]');
+
+    dataAtrebuts.forEach((atr) => {
+        let keysCurrent = atr.dataset.i18;
+
+        for (let key in i18Obj[lang]) {
+            if (keysCurrent === key) {
+                atr.textContent = i18Obj[lang][key];
+            }
+        }
+    });
+}
+
 
 
