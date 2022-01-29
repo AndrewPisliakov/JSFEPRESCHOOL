@@ -1,7 +1,6 @@
 
 import i18Obj from "./translate.js";
 
-console.log(i18Obj);
 
 // Burger menu
 
@@ -55,14 +54,51 @@ portfolioGroupBtnContainer.addEventListener('click', (event) => {
 
     // работаем с изображениями
     let portfolioImgs = document.querySelectorAll('.portfolio-image');
-    
-    portfolioImgs.forEach( (elem, index) => {
+
+    portfolioImgs.forEach((elem, index) => {
         elem.src = `./assets/img/${timeOfTheYear}/${index + 1}.jpg`;
     });
 });
 
 
-
-
 const changeClassActive = (elem, activeClass) => elem.classList.add(activeClass);
+
+
+// translate simbol
+
+//========================================
+
+// меняем active class 
+
+let buttonsLang = document.querySelectorAll('span[data-lang]');
+
+buttonsLang.forEach((button) => {
+
+    button.addEventListener('click', (event) => {
+        let currentButton = event.target;
+
+        buttonsLang.forEach((but) => {
+            if (but.classList.contains('nav-link')) {
+                but.classList.remove('active');
+            }
+        });
+
+        changeClassActive(currentButton, 'active');
+
+
+        // translate page
+
+        //================================
+
+        //console.log(currentButton.dataset.lang, typeof currentButton.dataset.lang);
+        if (currentButton.dataset.lang === 'en') {
+            console.log(true);
+        } else {
+            console.log(false);
+        }
+
+
+    });
+});
+
 
