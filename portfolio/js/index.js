@@ -1,4 +1,3 @@
-
 import i18Obj from "./translate.js";
 
 // Burger menu
@@ -83,7 +82,7 @@ buttonsLang.forEach((button) => {
         //================================
 
         let currentLang = currentButton.dataset.lang;
-        
+
         translate(currentLang);
     });
 });
@@ -105,10 +104,23 @@ function translate(lang) {
     });
 }
 
-
 // Change color theme 
 //==========================================================
 
+const classForChangeTheme = ['body-home', 'skills', 'portfolio', 'video',
+    'hero-content', 'price', 'section-title-text'];
 
-let elem = document.querySelectorAll('#skills');
-console.log(elem, typeof elem);
+const buttonTheme = document.querySelector('.theme-sun-svg');
+
+buttonTheme.addEventListener('click', () => {
+
+    classForChangeTheme.forEach((currentClass) => {
+        let arrElemCurrent = document.querySelectorAll(`.${currentClass}`)
+        
+        arrElemCurrent.forEach( (elem) => {
+            if (elem.classList.contains(currentClass)) {
+                elem.classList.toggle(`${currentClass}-theme`);
+            }
+        });
+    });
+});

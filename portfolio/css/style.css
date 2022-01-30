@@ -30,6 +30,11 @@ body, p, .main-typo {
     color: #ffffff;
 }
 
+.body-home-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
 h1, .h1-typo {
     font-family: 'Merriweather', serif;
     font-weight: 700;
@@ -237,7 +242,7 @@ h1, .h1-typo {
     margin-left: auto;
 }
 
-.theme img {
+.theme-sun-svg {
     display: block;
     margin-right: 20px;
     margin-left: 30px;
@@ -299,10 +304,17 @@ h1, .h1-typo {
     width: 500px;
 }
 
+.hero-content-theme {
+    color: #fff;
+}
+
 
 .skills {
-    /* height: 482px; */
     background-color: #000000;
+}
+
+.skills-theme {
+    background-color: #fff;
 }
 
 .skills-item-wrapper {
@@ -359,6 +371,13 @@ h1, .h1-typo {
     color: #BDAE82;
 }
 
+.section-title-text-theme {
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #000000;
+}
+
 .section-title-text:before,
 .section-title-text:after {
     content: "";
@@ -371,6 +390,19 @@ h1, .h1-typo {
     transform: translateY(-50%);
 }
 
+.section-title-text-theme:before,
+.section-title-text-theme:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 274px;
+    top: 50%;
+    height: 1px;
+    background-color: #000000;
+    transform: translateY(-50%);
+}
+
+
 .section-title-text:before {
     left: 100%;
 }
@@ -381,6 +413,10 @@ h1, .h1-typo {
 
 .portfolio {
     background-color: #000000;
+}
+
+.portfolio-theme {
+    background-color: #fff;
 }
 
 .portfolio-group-btn {
@@ -415,6 +451,10 @@ h1, .h1-typo {
     background-color: #000000;
 }
 
+.video-theme {
+    background-color: #fff;
+}
+
 .video-foto {
     display: block;
     margin: 0 auto;
@@ -447,6 +487,10 @@ svg:hover .svg-hover {
 .price {
     /*  height: 845px; */
     background-color: #000000;
+}
+
+.price-theme {
+    background-color: #fff;
 }
 
 .price-wrapper {
@@ -514,6 +558,7 @@ h2 {
 
 .contacts {
     position: relative;
+    background-color: #000000;
 }
 
 .contacts-container {
@@ -542,6 +587,7 @@ h2 {
     margin-bottom: 40px;
     padding: 0;
     text-align: left;
+    color: #BDAE82;
 }
 
 .section-title-contact::before,
@@ -591,6 +637,7 @@ h2 {
     align-items: center;
     min-height: 150px;
     padding-left: 20px;
+    background-color: #000000;
 }
 
 .footer-text, .footer-copy {
@@ -842,13 +889,11 @@ a:hover {
         margin-bottom: 40px;
     }
 
-
     .contacts-container {
         margin: 0;
         padding: 0;
         right: 21%;
         top: 38%;
-
     }
 
     .contact-img img {
