@@ -1,9 +1,7 @@
 
 import i18Obj from "./translate.js";
 
-
 // Burger menu
-
 //======================================================
 
 const elemGamburher = document.querySelector('.hamburger');
@@ -30,7 +28,6 @@ closeHamburger.addEventListener('click', () => {
 
 
 // sort img 
-
 //=======================================================
 
 const portfolioGroupBtnContainer = document.querySelector('.portfolio-group-btn');
@@ -60,12 +57,9 @@ portfolioGroupBtnContainer.addEventListener('click', (event) => {
     });
 });
 
-
 const changeClassActive = (elem, activeClass) => elem.classList.add(activeClass);
 
-
 // translate simbol
-
 //========================================
 
 // меняем active class 
@@ -85,24 +79,16 @@ buttonsLang.forEach((button) => {
 
         changeClassActive(currentButton, 'active');
 
-
         // translate page
-
         //================================
 
-        //console.log(currentButton.dataset.lang, typeof currentButton.dataset.lang);
-
         let currentLang = currentButton.dataset.lang;
-        console.log(currentLang);
-
+        
         translate(currentLang);
-
-
     });
 });
 
 // Function for translate
-
 //===============================
 
 function translate(lang) {
@@ -120,4 +106,9 @@ function translate(lang) {
 }
 
 
+// Change color theme 
+//==========================================================
 
+
+let elem = document.querySelectorAll('#skills');
+console.log(elem, typeof elem);

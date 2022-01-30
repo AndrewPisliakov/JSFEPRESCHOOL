@@ -237,6 +237,17 @@ h1, .h1-typo {
     margin-left: auto;
 }
 
+.theme img {
+    display: block;
+    margin-right: 20px;
+    margin-left: 30px;
+}
+
+.theme:hover {
+    cursor: pointer;
+    fill: #BDAE82;
+}
+
 
 .section-title {
     margin-top: 100px;
@@ -428,7 +439,7 @@ h1, .h1-typo {
     width: 100%;
 }
 
-svg:hover #svg-hover {
+svg:hover .svg-hover {
     fill: #BDAE82;
 }
 
@@ -677,6 +688,7 @@ a:hover {
         background-color: #ffffff;
     }
 
+
     .header a {
         padding-left: 40px;
     }
@@ -903,6 +915,8 @@ a:hover {
     }
 
 }
+
+
 
 
 
