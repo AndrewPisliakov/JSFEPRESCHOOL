@@ -1,5 +1,31 @@
 import i18Obj from "./translate.js";
 
+console.log('Дополнительно реализован LocalStorage');
+
+//Объект для LocalStorage
+let objLocalStorage = {
+    lang: 'en',
+    theme: 'dark',
+};
+
+//массив для изменения темы
+const classForChangeTheme = ['body-home', 'skills', 'portfolio', 'video',
+    'hero-content', 'price', 'section-title-text'];
+
+//проверка LocalStorage    
+if (localStorage.getItem('userInterface')) {
+    objLocalStorage = JSON.parse(localStorage.getItem('userInterface'));
+
+    translate(objLocalStorage.lang);
+    if (objLocalStorage.theme === 'light') changeTheme();
+
+    if (objLocalStorage.lang === 'ru') {
+
+        document.querySelector(`[data-lang='ru']`).classList.add('active');
+        document.querySelector(`[data-lang='en']`).classList.remove('active');
+    }
+}
+
 // Burger menu
 //======================================================
 
@@ -56,19 +82,23 @@ portfolioGroupBtnContainer.addEventListener('click', (event) => {
     });
 });
 
-const changeClassActive = (elem, activeClass) => elem.classList.add(activeClass);
+function changeClassActive(elem, activeClass) {
+    elem.classList.add(activeClass);
+}
 
-// translate simbol
+// translate 
 //========================================
 
-// меняем active class 
+// меняем active class eng/ru
 
 let buttonsLang = document.querySelectorAll('span[data-lang]');
 
 buttonsLang.forEach((button) => {
 
     button.addEventListener('click', (event) => {
+
         let currentButton = event.target;
+        let langCurrent = currentButton.dataset.lang;
 
         buttonsLang.forEach((but) => {
             if (but.classList.contains('nav-link')) {
@@ -81,9 +111,7 @@ buttonsLang.forEach((button) => {
         // translate page
         //================================
 
-        let currentLang = currentButton.dataset.lang;
-
-        translate(currentLang);
+        translate(langCurrent);
     });
 });
 
@@ -102,25 +130,50 @@ function translate(lang) {
             }
         }
     });
+    if (lang === 'en') {
+        objLocalStorage.lang = 'en';
+        listenerLocakStorage();
+    } else {
+        objLocalStorage.lang = 'ru';
+        listenerLocakStorage();
+    };
 }
 
 // Change color theme 
 //==========================================================
 
-const classForChangeTheme = ['body-home', 'skills', 'portfolio', 'video',
-    'hero-content', 'price', 'section-title-text'];
-
 const buttonTheme = document.querySelector('.theme-sun-svg');
 
 buttonTheme.addEventListener('click', () => {
 
+    changeTheme();
+
+    if (objLocalStorage.theme === 'dark') {
+        objLocalStorage.theme = 'light';
+        listenerLocakStorage();
+    } else {
+        objLocalStorage.theme = 'dark';
+        listenerLocakStorage();
+    };
+});
+
+function changeTheme() {
+
     classForChangeTheme.forEach((currentClass) => {
         let arrElemCurrent = document.querySelectorAll(`.${currentClass}`)
-        
-        arrElemCurrent.forEach( (elem) => {
+
+        arrElemCurrent.forEach((elem) => {
             if (elem.classList.contains(currentClass)) {
                 elem.classList.toggle(`${currentClass}-theme`);
             }
         });
     });
-});
+}
+
+// Keep data localStorage 
+//====================================================
+
+function listenerLocakStorage() {
+    localStorage.setItem('userInterface', JSON.stringify(objLocalStorage));
+}
+

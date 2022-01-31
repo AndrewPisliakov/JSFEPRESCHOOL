@@ -320,7 +320,7 @@ h1, .h1-typo {
 .skills-item-wrapper {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: top;
     flex-wrap: wrap;
 }
 
@@ -356,6 +356,9 @@ h1, .h1-typo {
     margin-bottom: 10px;
 }
 
+.skills-item .skills-content {
+    width: 300px;
+}
 
 /* Перечеркивание */
 
@@ -483,7 +486,6 @@ svg:hover .svg-hover {
     fill: #BDAE82;
 }
 
-
 .price {
     /*  height: 845px; */
     background-color: #000000;
@@ -547,7 +549,7 @@ svg:hover .svg-hover {
     border-radius: 0px;
 }
 
-.btn-price-container button {
+.price-item .btn-price-container button {
     display: block;
     margin: 0 auto;
 }
@@ -681,13 +683,12 @@ a:hover {
 
     .main-navbar {
         display: none;  
-        /* position: fixed;
+        position: fixed;
         z-index: 1002;
         top: 0;
-        right: -620px; */
-        transform: translateX(200%);
+        right: -620px;
         bottom: 0;
-        left: 770px;
+        left: 6200px;
         background: rgba(0, 0, 0, 0.5);
         transition: transform 0.5s ease;
     }
@@ -698,8 +699,6 @@ a:hover {
         left: 0;
         transform: translateX(0);
     }
-
-   
 
     .main-navbar .header-nav-main {
         position: absolute;
@@ -795,10 +794,6 @@ a:hover {
         margin: 5px;
     }
 
-    .skills-item {
-        width: 300px;
-    }
-
 
     .skills-icon {
         margin-bottom: 30px;
@@ -808,9 +803,7 @@ a:hover {
         margin-bottom: 40px;
     }
 
-    .skills-item {
-        max-width: 300px;
-    }
+  
 
     .m-mobile {
         margin-bottom: 50px;
@@ -854,7 +847,7 @@ a:hover {
 
     .container-video img {
         display: block;
-        width: 106vw;
+        width: 100vw;
     }
 
     .play-hover {
@@ -958,9 +951,7 @@ a:hover {
     .nav-close::after {
         transform: rotate(-45deg);
     }
-
 }
-
 
 
 
