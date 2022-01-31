@@ -10,20 +10,23 @@ let objLocalStorage = {
 
 //массив для изменения темы
 const classForChangeTheme = ['body-home', 'skills', 'portfolio', 'video',
-    'hero-content', 'price', 'section-title-text'];
+    'hero-content', 'price', 'section-title-text', 'header-nav-main', 'nav-close'];
 
 //проверка LocalStorage    
 if (localStorage.getItem('userInterface')) {
     objLocalStorage = JSON.parse(localStorage.getItem('userInterface'));
 
     translate(objLocalStorage.lang);
+
     if (objLocalStorage.theme === 'light') changeTheme();
+
+
 
     if (objLocalStorage.lang === 'ru') {
 
         document.querySelector(`[data-lang='ru']`).classList.add('active');
         document.querySelector(`[data-lang='en']`).classList.remove('active');
-    }
+    } 
 }
 
 // Burger menu
@@ -60,6 +63,7 @@ const portfolioGroupBtn = document.querySelectorAll('.btn-portfolio');
 
 portfolioGroupBtnContainer.addEventListener('click', (event) => {
     let button = event.target;
+    let arrClass = Object.values(button.classList); // т.к. клик только по нашему элементу с классом 
     let timeOfTheYear = button.dataset.season;
 
     //работаем с кнопками перебирая их и меняем bg
@@ -78,7 +82,10 @@ portfolioGroupBtnContainer.addEventListener('click', (event) => {
     let portfolioImgs = document.querySelectorAll('.portfolio-image');
 
     portfolioImgs.forEach((elem, index) => {
-        elem.src = `./assets/img/${timeOfTheYear}/${index + 1}.jpg`;
+
+        if (arrClass.includes('btn')) {
+            elem.src = `./assets/img/${timeOfTheYear}/${index + 1}.jpg`;
+        }
     });
 });
 
@@ -132,10 +139,12 @@ function translate(lang) {
     });
     if (lang === 'en') {
         objLocalStorage.lang = 'en';
-        listenerLocakStorage();
+        listenerLocakStorage(); 
+        translatePlaceholder(lang)  
     } else {
         objLocalStorage.lang = 'ru';
         listenerLocakStorage();
+        translatePlaceholder(lang)
     };
 }
 
@@ -176,4 +185,39 @@ function changeTheme() {
 function listenerLocakStorage() {
     localStorage.setItem('userInterface', JSON.stringify(objLocalStorage));
 }
+
+// translate placeholder  rus 
+//==============================
+function translatePlaceholder(lang) {
+    let elemsInput = document.querySelectorAll('[placeholder]');
+    elemsInput.forEach(elem => {
+        let text = elem.placeholder;
+
+        if (lang === 'ru') {
+            switch (text) {
+                case 'E-mail':
+                    elem.placeholder = 'E-почта';
+                    break;
+                case 'Phone':
+                    elem.placeholder = 'Телефон';
+                    break;
+                case 'Message':
+                    elem.placeholder = 'Ваше сообщение';
+            }
+        } else if (lang === 'eng') {
+            switch (text) {
+                case 'E-почта':
+                    elem.placeholder = 'E-mail';
+                    break;
+                case 'Телефон':
+                    elem.placeholder = 'Phone';
+                    break;
+                case 'Ваше сообщение':
+                    elem.placeholder = 'Message';
+            }
+        }
+    });
+}
+
+
 
