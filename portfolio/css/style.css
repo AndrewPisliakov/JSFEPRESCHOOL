@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -28,6 +27,11 @@ body, p, .main-typo {
 .body-home {
     background-color: #000000;
     color: #ffffff;
+}
+
+.body-home-theme {
+    background-color: #ffffff;
+    color: #000000;
 }
 
 h1, .h1-typo {
@@ -109,6 +113,11 @@ h1, .h1-typo {
     border-color: #BDAE82;
 }
 
+.btn-active {
+    color: #ffffff;
+    background-color: #BDAE82;
+}
+
 .btn-transparent-primary:hover, .btn-transparent-primary.active {
     color: #ffffff;
     background-color: #BDAE82;
@@ -183,6 +192,7 @@ h1, .h1-typo {
 .nav-list .nav-item {
     padding-left: 30px;
     padding-right: 30px;
+    cursor: pointer;
 }
 
 .active {
@@ -229,6 +239,17 @@ h1, .h1-typo {
 
 .nav {
     margin-left: auto;
+}
+
+.theme-sun-svg {
+    display: block;
+    margin-right: 20px;
+    margin-left: 30px;
+}
+
+.theme:hover {
+    cursor: pointer;
+    fill: #BDAE82;
 }
 
 
@@ -282,16 +303,23 @@ h1, .h1-typo {
     width: 500px;
 }
 
+.hero-content-theme {
+    color: #fff;
+}
+
 
 .skills {
-    /* height: 482px; */
     background-color: #000000;
+}
+
+.skills-theme {
+    background-color: #fff;
 }
 
 .skills-item-wrapper {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: top;
     flex-wrap: wrap;
 }
 
@@ -327,6 +355,9 @@ h1, .h1-typo {
     margin-bottom: 10px;
 }
 
+.skills-item .skills-content {
+    width: 300px;
+}
 
 /* Перечеркивание */
 
@@ -342,6 +373,13 @@ h1, .h1-typo {
     color: #BDAE82;
 }
 
+.section-title-text-theme {
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #000000;
+}
+
 .section-title-text:before,
 .section-title-text:after {
     content: "";
@@ -354,6 +392,19 @@ h1, .h1-typo {
     transform: translateY(-50%);
 }
 
+.section-title-text-theme:before,
+.section-title-text-theme:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 274px;
+    top: 50%;
+    height: 1px;
+    background-color: #000000;
+    transform: translateY(-50%);
+}
+
+
 .section-title-text:before {
     left: 100%;
 }
@@ -364,6 +415,10 @@ h1, .h1-typo {
 
 .portfolio {
     background-color: #000000;
+}
+
+.portfolio-theme {
+    background-color: #fff;
 }
 
 .portfolio-group-btn {
@@ -379,16 +434,17 @@ h1, .h1-typo {
     justify-content: center;
 }
 
-.portfolio-foto {
+.portfolio-image {
     flex: 0 1 33.33333%;
     padding: 12.5px;
-    
+
 }
 
-.portfolio-foto img {
+.portfolio-image img {
     display: block;
     width: 100%;
 }
+
 .container-video {
     position: relative;
 }
@@ -396,6 +452,10 @@ h1, .h1-typo {
 .video {
     /* height: 945px; */
     background-color: #000000;
+}
+
+.video-theme {
+    background-color: #fff;
 }
 
 .video-foto {
@@ -411,25 +471,29 @@ h1, .h1-typo {
 
 .play-hover {
     position: absolute;
-     top: 50%;
+    top: 50%;
     left: 50%;
     display: block;
-    margin-right: -50%; 
+    margin-right: -50%;
     transform: translate(-50%, -50%);
 
 }
+
 .play-hover img {
     width: 100%;
 }
 
-svg:hover #svg-hover {
+svg:hover .svg-hover {
     fill: #BDAE82;
 }
-
 
 .price {
     /*  height: 845px; */
     background-color: #000000;
+}
+
+.price-theme {
+    background-color: #fff;
 }
 
 .price-wrapper {
@@ -486,7 +550,7 @@ svg:hover #svg-hover {
     border-radius: 0px;
 }
 
-.btn-price-container button {
+.price-item .btn-price-container button {
     display: block;
     margin: 0 auto;
 }
@@ -497,6 +561,7 @@ h2 {
 
 .contacts {
     position: relative;
+    background-color: #000000;
 }
 
 .contacts-container {
@@ -525,6 +590,7 @@ h2 {
     margin-bottom: 40px;
     padding: 0;
     text-align: left;
+    color: #BDAE82;
 }
 
 .section-title-contact::before,
@@ -574,6 +640,7 @@ h2 {
     align-items: center;
     min-height: 150px;
     padding-left: 20px;
+    background-color: #000000;
 }
 
 .footer-text, .footer-copy {
@@ -616,14 +683,13 @@ a:hover {
     }
 
     .main-navbar {
-        display: none;  
-        /* position: fixed;
+        display: none;
+        position: fixed;
         z-index: 1002;
         top: 0;
-        right: -620px; */
-        transform: translateX(200%);
+        right: -620px;
         bottom: 0;
-        left: 770px;
+        left: 6200px;
         background: rgba(0, 0, 0, 0.5);
         transition: transform 0.5s ease;
     }
@@ -635,8 +701,6 @@ a:hover {
         transform: translateX(0);
     }
 
-   
-
     .main-navbar .header-nav-main {
         position: absolute;
         top: 0;
@@ -646,6 +710,11 @@ a:hover {
         overflow-y: auto;
         background-color: #000000;
         padding: 130px 78px;
+    }
+
+    .main-navbar .header-nav-main-theme {
+        background-color: #fff;
+        color: #000000;
     }
 
     .main-navbar .nav-list {
@@ -670,6 +739,7 @@ a:hover {
         height: 3px;
         background-color: #ffffff;
     }
+
 
     .header a {
         padding-left: 40px;
@@ -730,10 +800,6 @@ a:hover {
         margin: 5px;
     }
 
-    .skills-item {
-        width: 300px;
-    }
-
 
     .skills-icon {
         margin-bottom: 30px;
@@ -743,9 +809,7 @@ a:hover {
         margin-bottom: 40px;
     }
 
-    .skills-item {
-        max-width: 300px;
-    }
+
 
     .m-mobile {
         margin-bottom: 50px;
@@ -777,7 +841,7 @@ a:hover {
         text-align: center;
     }
 
-    .portfolio-foto img {
+    .portfolio-image img {
         width: none;
     }
 
@@ -789,7 +853,7 @@ a:hover {
 
     .container-video img {
         display: block;
-        width: 106vw;
+        width: 100vw;
     }
 
     .play-hover {
@@ -824,13 +888,11 @@ a:hover {
         margin-bottom: 40px;
     }
 
-
     .contacts-container {
         margin: 0;
         padding: 0;
         right: 21%;
         top: 38%;
-
     }
 
     .contact-img img {
@@ -866,7 +928,7 @@ a:hover {
     }
 
 
-    .main-navbar  .nav-close {
+    .main-navbar .nav-close {
         display: block;
         position: absolute;
         top: 34px;
@@ -874,7 +936,6 @@ a:hover {
         width: 45px;
         height: 45px;
         cursor: pointer;
-
     }
 
     .nav-close::before,
@@ -888,6 +949,11 @@ a:hover {
         background: #ffffff;
     }
 
+    .nav-close-theme::before,
+    .nav-close-theme::after {
+        background-color: #000000;
+    }
+
     .nav-close::before {
         transform: rotate(45deg);
     }
@@ -895,8 +961,4 @@ a:hover {
     .nav-close::after {
         transform: rotate(-45deg);
     }
-
 }
-
-
-
