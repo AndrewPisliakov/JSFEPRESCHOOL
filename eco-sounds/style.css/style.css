@@ -48,38 +48,52 @@ ul.nav-list {
     transition: 0.3s;
 }
 
-
-img.logo {
-    display: block;
-    width: 50px;
-    height: 50px;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-
-
-button.btn-play {
-    width: 160px;
-    height: 160px;
-    background-image: url(../assets/svg/play.svg);
-    background-size: contain;
-    border: none;
-    background-color: transparent;
-
+.nav-item:hover {
+    color: #bdae82;
 }
 
 .main-container {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/img/forest.jpg);
+    height: calc(100vh - 120px);
+    background-size: cover;
 }
 
-button.btn-play {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%)
+.img-forest {
+    display: block;
+
 }
 
+svg.logo {
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+
+svg.logo path {
+    fill: rgba(189, 174, 130);
+}
+
+svg.logo:hover path {
+    fill: #fff;
+}
+
+svg.btn-play {
+    width: 160px;
+    height: 160px;
+    /*     background-image: url(../assets/svg/play.svg);
+    background-size: contain; */
+    border: none;
+    background-color: transparent;
+}
+
+svg.btn-play path:hover {
+    fill: rgba(189, 174, 130, 0.7);
+    cursor: pointer;
+    transition: 3s;
+}
 
 svg.svg-logo {
     width: 135px;
@@ -91,4 +105,36 @@ svg.svg-logo {
 
 .rss-logo:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1440px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copy {
+    padding-right: 20px;
+}
+
+.footer-links {
+    padding-right: 20px;
+    padding-left: 20px;
+    text-decoration: none;
+    color: #fff;
+    transition: .3s;
+}
+
+.footer-links:hover {
+    color: #bdae82;
 }
