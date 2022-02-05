@@ -1,25 +1,32 @@
 const headerContainer = document.querySelector('.header-container');
-console.log( headerContainer );
+const elemsNavItems = document.querySelectorAll('.nav-item');
+
+//console.log( headerContainer );
+//console.log( elemsNavItems );
 
 headerContainer.addEventListener('click', (event) => {
-    console.log(event.target);
-    
+    //console.log(event.target);
+
     let currentElem = event.target;
-    if(currentElem.classList.contains('nav-item')) {
-        
+
+    // работаем с классами active
+    if (currentElem.classList.contains('nav-item')) {
+        elemsNavItems.forEach((item) => {
+            if (item.classList.contains('active')) {
+                item.classList.remove('active');
+            }
+        });
+
+        currentElem.classList.add('active');
     };
-    
-    
+
+    // работаем с изображениями 
+    if (currentElem.classList.contains('nav-item')) {
+        let img = document.querySelector('.main-container');
+        let currentButtonBird = currentElem.dataset.bird;
+        
+        img.style.backgroundImage = `url(../assets/img/${currentButtonBird}.jpg)`
+    }
 });
 
 
-/* const arrBirds = document.querySelectorAll('.nav-item');
-
-arrBirds.forEach(elem => {
-    elem.addEventListener('click', event => {
-        console.log(event.currentTarget);
-        let currentBird = event.currentTarget;
-        //console.log(currentBird.classList);
-    })
-});
- */

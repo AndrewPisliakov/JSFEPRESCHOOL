@@ -56,6 +56,10 @@ ul.nav-list {
     color: #bdae82;
 }
 
+logo.logo.nav-item:hover {
+    filter: none;
+}
+
 .main-container {
     display: flex;
     justify-content: center;
