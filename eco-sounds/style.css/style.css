@@ -56,9 +56,14 @@ ul.nav-list {
     color: #bdae82;
 }
 
-logo.logo.nav-item:hover {
+logo.logo.nav-item.active:hover {
     filter: none;
 }
+
+logo.logo.nav-item:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
 
 .main-container {
     display: flex;
@@ -99,17 +104,23 @@ svg.logo:hover path {
     fill: #fff;
 } */
 
-svg.btn-play {
+button.btn-play {
+    background-image: url(../assets/svg/play.svg);
+    background-size: cover;
     width: 160px;
     height: 160px;
     border: none;
     background-color: transparent;
 }
 
-svg.btn-play path:hover {
-    fill: rgba(189, 174, 130, 0.7);
+button.btn-play:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
     cursor: pointer;
     transition: 3s;
+}
+
+button.btn-play.pause {
+    background-image: url(../assets/svg/pause.svg);
 }
 
 svg.svg-logo {
