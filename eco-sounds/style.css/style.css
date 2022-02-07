@@ -70,7 +70,7 @@ logo.logo.nav-item:hover {
     justify-content: center;
     align-items: center;
     background-image: url(../assets/img/forest.jpg);
-    height: calc(100vh - 120px);
+    height: calc(100vh - 135px);
     background-size: cover;
 }
 
@@ -87,22 +87,6 @@ logo.logo.nav-item:hover {
     background-repeat: no-repeat;
     transition: 0.3s;
 }
-
-
-/* svg.logo {
-    display: block;
-    width: 50px;
-    height: 50px;
-}
-
-svg.logo path {
-    fill: #fff;
-     fill: rgba(189, 174, 130); 
-}
-
-svg.logo:hover path {
-    fill: #fff;
-} */
 
 button.btn-play {
     background-image: url(../assets/svg/play.svg);
@@ -126,6 +110,7 @@ button.btn-play.pause {
 svg.svg-logo {
     width: 135px;
     height: 50px;
+    margin-top: 10px;
     background-size: contain;
     background-repeat: no-repeat;
     transition: .3s;
