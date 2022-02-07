@@ -1,12 +1,9 @@
 const headerContainer = document.querySelector('.header-container');
 const elemsNavItems = document.querySelectorAll('.nav-item');
 let currentButtonBird = 'forest';
-
-//console.log( headerContainer );
-//console.log( elemsNavItems );
+let isPlay = false;
 
 headerContainer.addEventListener('click', (event) => {
-    //console.log(event.target);
 
     let currentElem = event.target;
 
@@ -27,29 +24,28 @@ headerContainer.addEventListener('click', (event) => {
         currentButtonBird = currentElem.dataset.bird;
         console.log(currentButtonBird);
 
-        img.style.backgroundImage = `url(../assets/img/${currentButtonBird}.jpg)`
-        audioPlayer();
+        img.style.backgroundImage = `url(../assets/img/${currentButtonBird}.jpg)`;
+        changeTrackSource();
+        isPlay = false;
+        toggleMusicState();
     }
 });
 
-
 // изменение кнопки play/pause 
 const btnPlay = document.querySelector('.btn-play');
-btnPlay.addEventListener('click', changeClass);
+btnPlay.addEventListener('click', toggleMusicState);
 
-function changeClass() {
+function togglePauseClass() {
     btnPlay.classList.toggle('pause')
 }
 
-btnPlay.addEventListener('click', audioPlayer);
-
 // проигрыватель 
-let isPlay = false;
-const audio = document.querySelector('audio');
-//console.log(audio.src);
 
-//audio.src = `./assets/audio/${currentButtonBird}.mp3`;
-//console.log(audio.srs);
+const audio = document.querySelector('audio');
+
+function changeTrackSource () {
+    audio.src = `./assets/audio/${currentButtonBird}.mp3`;
+}
 
 function playAudio() {
     audio.play();
@@ -59,27 +55,14 @@ function pauseAudio() {
     audio.pause();
 }
 
-function audioPlayer() {
-    audio.src = `./assets/audio/${currentButtonBird}.mp3`;
-    console.log(audio.src);
-    console.log(currentButtonBird);
-   
+function toggleMusicState() {
     if (!isPlay) {
         playAudio();
+        btnPlay.classList.add('pause');
         isPlay = true;
     } else {
         pauseAudio();
+        btnPlay.classList.remove('pause');
         isPlay = false;
-
     }
-    console.log(isPlay);
 }
-console.log(isPlay);
-
-//audioPlayer();
-
-//setInterval(() => console.log(currentButtonBird, typeof currentButtonBird, 'currentButtonBird', audio.src ), 3000);
-//console.log(currentButtonBird, 'currentButtonBird');
-
-
-//<audio src="./assets/audio/drozd.mp3" controls></audio>
