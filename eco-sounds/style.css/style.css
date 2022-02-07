@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 2;
+    color: #fff;
+    background-color: #000000;
+}
+
+header {
+    width: 100%;
+    background-color: #000000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 5px 20px;
+
+}
+
+ul.nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-item {
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-item.active {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.nav-item:hover {
+    color: #bdae82;
+}
+
+logo.logo.nav-item.active:hover {
+    filter: none;
+}
+
+logo.logo.nav-item:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/img/forest.jpg);
+    height: calc(100vh - 120px);
+    background-size: cover;
+}
+
+.img-forest {
+    display: block;
+
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background-image: url(../assets/svg/logo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+
+
+/* svg.logo {
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+
+svg.logo path {
+    fill: #fff;
+     fill: rgba(189, 174, 130); 
+}
+
+svg.logo:hover path {
+    fill: #fff;
+} */
+
+button.btn-play {
+    background-image: url(../assets/svg/play.svg);
+    background-size: cover;
+    width: 160px;
+    height: 160px;
+    border: none;
+    background-color: transparent;
+}
+
+button.btn-play:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    cursor: pointer;
+    transition: 3s;
+}
+
+button.btn-play.pause {
+    background-image: url(../assets/svg/pause.svg);
+}
+
+svg.svg-logo {
+    width: 135px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: .3s;
+}
+
+.rss-logo:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1440px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copy {
+    padding-right: 20px;
+}
+
+.footer-links {
+    padding-right: 20px;
+    padding-left: 20px;
+    text-decoration: none;
+    color: #fff;
+    transition: .3s;
+}
+
+.footer-links:hover {
+    color: #bdae82;
+}
