@@ -24,7 +24,7 @@ headerContainer.addEventListener('click', (event) => {
         currentButtonBird = currentElem.dataset.bird;
         console.log(currentButtonBird);
 
-        img.style.backgroundImage = `url(../assets/img/${currentButtonBird}.jpg)`;
+        img.style.backgroundImage = `url(assets/img/${currentButtonBird}.jpg)`;
         changeTrackSource();
         isPlay = false;
         toggleMusicState();
