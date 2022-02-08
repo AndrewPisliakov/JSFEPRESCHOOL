@@ -1,8 +1,6 @@
 const headerContainer = document.querySelector('.header-container');
 const elemsNavItems = document.querySelectorAll('.nav-item');
 let currentButtonBird = 'forest';
-let isPlay = false;
-
 headerContainer.addEventListener('click', (event) => {
 
     let currentElem = event.target;
@@ -26,7 +24,6 @@ headerContainer.addEventListener('click', (event) => {
 
         img.style.backgroundImage = `url(assets/img/${currentButtonBird}.jpg)`;
         changeTrackSource();
-        isPlay = false;
         toggleMusicState();
     }
 });
@@ -34,10 +31,6 @@ headerContainer.addEventListener('click', (event) => {
 // изменение кнопки play/pause 
 const btnPlay = document.querySelector('.btn-play');
 btnPlay.addEventListener('click', toggleMusicState);
-
-function togglePauseClass() {
-    btnPlay.classList.toggle('pause')
-}
 
 // проигрыватель 
 
@@ -47,22 +40,12 @@ function changeTrackSource () {
     audio.src = `./assets/audio/${currentButtonBird}.mp3`;
 }
 
-function playAudio() {
-    audio.play();
-}
-
-function pauseAudio() {
-    audio.pause();
-}
-
 function toggleMusicState() {
-    if (!isPlay) {
-        playAudio();
+    if (audio.paused) {
+        audio.play();
         btnPlay.classList.add('pause');
-        isPlay = true;
     } else {
-        pauseAudio();
+        audio.pause();
         btnPlay.classList.remove('pause');
-        isPlay = false;
     }
 }
