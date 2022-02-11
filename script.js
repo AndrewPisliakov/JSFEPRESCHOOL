@@ -1,4 +1,35 @@
-let url = 'https://api.unsplash.com/search/photos?query=spring&per_page=30&orientation=landscape&client_id=XAdjixWcAbF3mw0hUjTkyY7tgpGEPSSUc_Gj7t0hXjw';
+
+let input = document.querySelector('#input');
+let request = input.value;
+
+
+if(localStorage) {
+    
+    input.value = JSON.parse(localStorage.getItem('isRequest'));
+}
+
+
+
+//после отправки поискового запроса и отображения результатов поиска, поисковый запрос 
+//продолжает отображаться в поле ввода +5
+//=====================================================
+
+
+
+input.addEventListener('input', function() {
+    request = this.value;
+    console.log(request);
+
+    //localStorage.setItem('isRequest', JSON.stringify(request));
+});
+
+
+
+
+
+
+
+/* let url = 'https://api.unsplash.com/search/photos?query=spring&per_page=30&orientation=landscape&client_id=XAdjixWcAbF3mw0hUjTkyY7tgpGEPSSUc_Gj7t0hXjw';
 
 let response = await fetch(url);
 let data = await response.json();
@@ -18,6 +49,37 @@ arrObjImg.forEach((obj) => {
     div.style.backgroundImage = `url(${url})`;
     body.append(div);   
 });
+ */
+
+
+
+// поисковый запрос можно отправить нажатием клавиши Enter 
+//==========================================================
+
+
+input.addEventListener('keyup', (event) => {
+    event.preventDefault();
+    if(event.keyCode === 13) {
+        console.log('Do something');
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //data.urls.regular;
