@@ -1,11 +1,17 @@
 
 let input = document.querySelector('#input');
 let request = input.value;
+let url = `https://api.unsplash.com/search/photos?query=${request = 'winter'}&per_page=30&orientation=landscape&client_id=XAdjixWcAbF3mw0hUjTkyY7tgpGEPSSUc_Gj7t0hXjw`;
+let divContainer = document.querySelector('.main-container');
 
 
-if(localStorage) {
-    
-    input.value = JSON.parse(localStorage.getItem('isRequest'));
+
+
+if (localStorage.getItem('isRequest')) {
+    request = JSON.parse(localStorage.getItem('isRequest'));
+    input.value = request;
+    url = `https://api.unsplash.com/search/photos?query=${request}&per_page=30&orientation=landscape&client_id=XAdjixWcAbF3mw0hUjTkyY7tgpGEPSSUc_Gj7t0hXjw`;
+    console.log(request.length);
 }
 
 
@@ -14,42 +20,44 @@ if(localStorage) {
 //продолжает отображаться в поле ввода +5
 //=====================================================
 
+input.addEventListener('input', function () {
 
-
-input.addEventListener('input', function() {
     request = this.value;
     console.log(request);
 
-    //localStorage.setItem('isRequest', JSON.stringify(request));
+    url = `https://api.unsplash.com/search/photos?query=${request}&per_page=30&orientation=landscape&client_id=XAdjixWcAbF3mw0hUjTkyY7tgpGEPSSUc_Gj7t0hXjw`;
+
+    localStorage.setItem('isRequest', JSON.stringify(request));
 });
 
+console.log(request);
 
 
+setInterval(() => { console.log(request, url) }, 5000);
+
+async function getImages(url) {
+
+    let response = await fetch(url);
+    let data = await response.json();
+    return data.results;
+};
 
 
+function displayImgs(arrObj) {
+
+    divContainer.innerHTML = '';
+    console.log(arrObj);
 
 
-/* let url = 'https://api.unsplash.com/search/photos?query=spring&per_page=30&orientation=landscape&client_id=XAdjixWcAbF3mw0hUjTkyY7tgpGEPSSUc_Gj7t0hXjw';
+    arrObj.forEach((obj) => {
+        let url = obj.urls.regular;
+        let div = document.createElement('div');
+        div.classList.add('image');
+        div.style.backgroundImage = `url(${url})`;
+        divContainer.append(div);
+    });
 
-let response = await fetch(url);
-let data = await response.json();
-
-let arrObjImg = data.results;
-
-console.log(data.results); 
-
-let body = document.querySelector('.main-container');
-let div = document.createElement('div');
-
-arrObjImg.forEach((obj) => {
-    let url = obj.urls.regular;
-
-    let div = document.createElement('div');
-    div.classList.add('image');
-    div.style.backgroundImage = `url(${url})`;
-    body.append(div);   
-});
- */
+}
 
 
 
@@ -59,40 +67,19 @@ arrObjImg.forEach((obj) => {
 
 input.addEventListener('keyup', (event) => {
     event.preventDefault();
-    if(event.keyCode === 13) {
-        console.log('Do something');
+    if (event.keyCode === 13) {
+        console.log('Do something', url);
+        loadImgs();
     }
 });
 
+window.addEventListener('load', loadImgs);
+
+async function loadImgs() {
+    let arrObjImgs = await getImages(url);
+    displayImgs(arrObjImgs);
+};
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//data.urls.regular;
-
-//data.results[0].data.urls.regular
-
-//https://api.unsplash.com/photos/?client_id=YOUR_ACCESS_KEY
-
-
-
-
-//div.style.backgroundImage = `url(${})полученный от API адрес изображения`;
-/* function changeBgImg(){
-    block.style.backgroundImage = "url('https://cs7062.vk.me/c540107/v540107359/2729/fYQlS_23QdA.jpg')";
-} */
 
