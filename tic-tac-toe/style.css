@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+}
+
+table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* vertical alignment */
+    align-items: center;      /* horizontal alignment */
+    background-color: lightyellow;
+    
+}
+
+td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
