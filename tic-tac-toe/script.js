@@ -32,7 +32,7 @@ class Field {
     }
 }
 
-let field = new Field(3, 3);
+let field = new Field(4, 4);
 field.fillMatrixField();
 
 function fillCell() {
@@ -42,10 +42,16 @@ function fillCell() {
     });
 }
 
+function removeListener() {
+    let cells = getCells();
+    cells.forEach((сell) => {
+        сell.removeEventListener('click', assignValueCell);
+    });
+}
 
 function assignValueCell(event) {
     this.innerHTML = currentGamer;
-    console.log(event.target);
+    //console.log(event.target);
 
     if (currentGamer === 'X') {
         currentGamer = 'O'
@@ -54,6 +60,7 @@ function assignValueCell(event) {
     };
 
     this.removeEventListener('click', assignValueCell);
+    winningCombination();
 };
 
 function getCells() {
@@ -61,23 +68,35 @@ function getCells() {
 }
 
 function winningCombination() {
+
     let matrix = field.matrixField;
-    console.log(matrix);
+    let rowCurrentCell = [];
     
-}
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length; j++) {
+            rowCurrentCell.push(matrix[i][j].innerHTML);  
+        }
 
-winningCombination();
+        let check = rowCurrentCell.every((cell) => {
+            if (cell === 'X') {
+                return true;
+            } 
+        });
+        let check2 = rowCurrentCell.every((cell) => {
+            if (cell === 'O') {
+                return true;
+            } 
+        });
 
+        if (check || check2) {
+            alert('winer');
+            removeListener();
+        }
 
-
-/* let matrix = [];
-let num = 'i';
-for (let i = 0; i < 5; i++) {
-    let arr = [];
-    matrix.push(arr);
-    for (let j = 0; j < 5; j++) {
-        arr.push(num);
+        rowCurrentCell = [];
     }
+
 }
 
-console.log(matrix); */
+
+
