@@ -32,7 +32,7 @@ class Field {
     }
 }
 
-let field = new Field(4, 4);
+let field = new Field(3, 3);
 field.fillMatrixField();
 
 function fillCell() {
@@ -42,14 +42,8 @@ function fillCell() {
     });
 }
 
-function removeListener() {
-    let cells = getCells();
-    cells.forEach((сell) => {
-        сell.removeEventListener('click', assignValueCell);
-    });
-}
 
-function assignValueCell(event) {
+function assignValueCell() {
     this.innerHTML = currentGamer;
     //console.log(event.target);
 
@@ -67,35 +61,77 @@ function getCells() {
     return document.querySelectorAll('td');
 }
 
+function removeListener() {
+    let cells = getCells();
+    cells.forEach((сell) => {
+        сell.removeEventListener('click', assignValueCell);
+    });
+}
+
 function winningCombination() {
 
     let matrix = field.matrixField;
-    let rowCurrentCell = [];
-    
-    for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[i].length; j++) {
-            rowCurrentCell.push(matrix[i][j].innerHTML);  
+
+    function winningCombinationRow() {
+        let rowCurrentCell = [];
+
+        for (let i = 0; i < matrix.length; i++) {
+            for (let j = 0; j < matrix[i].length; j++) {
+                rowCurrentCell.push(matrix[i][j].innerHTML);
+            }
+
+            let checkRowX = rowCurrentCell.every((cell) => {
+                if (cell === 'X') {
+                    return true;
+                }
+            });
+            let checkRowO = rowCurrentCell.every((cell) => {
+                if (cell === 'O') {
+                    return true;
+                }
+            });
+
+            if (checkRowX || checkRowO) {
+                alert('winner');
+
+                removeListener();
+            }
+
+            rowCurrentCell = [];
         }
-
-        let check = rowCurrentCell.every((cell) => {
-            if (cell === 'X') {
-                return true;
-            } 
-        });
-        let check2 = rowCurrentCell.every((cell) => {
-            if (cell === 'O') {
-                return true;
-            } 
-        });
-
-        if (check || check2) {
-            alert('winer');
-            removeListener();
-        }
-
-        rowCurrentCell = [];
     }
 
+    function winningCombinationCol() {
+        let colCurrentCell = [];
+
+        for (let i = 0; i < matrix.length; i++) {
+            for (let j = 0; j < matrix[i].length; j++) {
+                colCurrentCell.push(matrix[j][i].innerHTML);
+            }
+
+            let checkColX = colCurrentCell.every((cell) => {
+                if (cell === 'X') {
+                    return true;
+                }
+            });
+            let checkColO = colCurrentCell.every((cell) => {
+                if (cell === 'O') {
+                    return true;
+                }
+            });
+
+            if (checkColX || checkColO) {
+                alert('winner');
+
+                removeListener();
+            }
+    
+            colCurrentCell = [];
+        }
+    }
+
+    winningCombinationCol();
+    winningCombinationRow();
 }
 
 
