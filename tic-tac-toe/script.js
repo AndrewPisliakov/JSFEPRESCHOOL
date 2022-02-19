@@ -1,5 +1,6 @@
 
 let currentGamer = 'X';
+let win = false;
 
 class Field {
     constructor(row, col) {
@@ -7,7 +8,7 @@ class Field {
         this.col = col;
         this.matrixField = [];
     }
-
+    // создаем и отрисовываем игровое поле
     fillMatrixField() {
         const table = document.createElement('table');
         table.setAttribute('id', 'table');
@@ -45,36 +46,31 @@ function fillCell() {
 
 function assignValueCell() {
     this.innerHTML = currentGamer;
-    //console.log(event.target);
+    winningCombination();
+    console.log(win);
+    if(win) return;
 
     if (currentGamer === 'X') {
-        currentGamer = 'O'
+        computerMove();
+        
     } else {
-        currentGamer = 'X';
-    };
+        currentGamer = 'O';
+    }; 
 
+    
     this.removeEventListener('click', assignValueCell);
-    winningCombination();
+    
 };
 
-function getCells() {
-    return document.querySelectorAll('td');
-}
-
-function removeListener() {
-    let cells = getCells();
-    cells.forEach((сell) => {
-        сell.removeEventListener('click', assignValueCell);
-    });
-}
 
 function winningCombination() {
 
     let matrix = field.matrixField;
 
     function winningCombinationRow() {
+        debugger;
         let rowCurrentCell = [];
-
+        
         for (let i = 0; i < matrix.length; i++) {
             for (let j = 0; j < matrix[i].length; j++) {
                 rowCurrentCell.push(matrix[i][j].innerHTML);
@@ -92,12 +88,14 @@ function winningCombination() {
             });
 
             if (checkRowX || checkRowO) {
+                win = true;
                 alert('winner');
-
                 removeListener();
+
             }
 
             rowCurrentCell = [];
+           
         }
     }
 
@@ -121,18 +119,112 @@ function winningCombination() {
             });
 
             if (checkColX || checkColO) {
+                win = true;
                 alert('winner');
 
                 removeListener();
             }
-    
+
             colCurrentCell = [];
         }
     }
 
+    function winningCombinationMainAxis() {
+        let mainAxisCurrentCell = [];
+
+        for (let i = 0; i < matrix.length; i++) {
+            mainAxisCurrentCell.push(matrix[i][i].innerHTML);
+        }
+
+        let checkMainAxisX = mainAxisCurrentCell.every((cell) => {
+            if (cell === 'X') {
+                return true;
+            }
+        });
+        let checkMainAxisO = mainAxisCurrentCell.every((cell) => {
+            if (cell === 'O') {
+                return true;
+            }
+        });
+
+        if (checkMainAxisX || checkMainAxisO) {
+            win = true;
+            alert('winner');
+
+            removeListener();
+        }
+
+        mainAxisCurrentCell = [];
+
+    }
+
+    function winningCombinationSecondAxis() {
+        let secondAxisCurrentCell = [];
+
+        for (let i = 0; i < matrix.length; i++) {
+            let currentCell = matrix[i][matrix[i].length - 1 - i];
+            secondAxisCurrentCell.push(currentCell.innerHTML);
+        }
+
+        let checSecondAxisX = secondAxisCurrentCell.every((cell) => {
+            if (cell === 'X') {
+                return true;
+            }
+        });
+        let checkSecondAxisO = secondAxisCurrentCell.every((cell) => {
+            if (cell === 'O') {
+                return true;
+            }
+        });
+
+        if (checSecondAxisX || checkSecondAxisO) {
+            win = true;
+            alert('winner');
+
+            removeListener();
+        }
+
+        secondAxisCurrentCell = [];
+    }
+
     winningCombinationCol();
     winningCombinationRow();
+    winningCombinationMainAxis();
+    winningCombinationSecondAxis();
 }
 
+
+function getCells() {
+    return document.querySelectorAll('td');
+}
+
+function removeListener() {
+    let cells = getCells();
+    cells.forEach((сell) => {
+        сell.removeEventListener('click', assignValueCell);
+    });
+}
+
+
+
+function getRndInteger(max) {
+    return Math.floor(Math.random() * (max - 0 + 1)) + 0;
+}
+
+function computerMove() {
+    let matrix = field.matrixField;
+    let maxNumber = field.matrixField.length - 1;
+    let i = getRndInteger(maxNumber);
+    let j = getRndInteger(maxNumber);
+
+    if (matrix[i][j].innerHTML === '') {
+        matrix[i][j].innerHTML = 'O';
+    } else {
+        computerMove();
+    }
+}
+
+
+//setInterval( () => { console.log(currentGamer) }, 3000);
 
 

@@ -36,3 +36,8 @@ input {
 .wrapper-input {
     margin-top: 20px;
 }
+
+.winner {
+    color: red;
+    font-size: 40px;
+}
