@@ -33,6 +33,8 @@ class Field {
     }
 }
 
+
+
 let field = new Field(3, 3);
 field.fillMatrixField();
 
@@ -45,32 +47,35 @@ function fillCell() {
 
 
 function assignValueCell() {
+    
     this.innerHTML = currentGamer;
+
     winningCombination();
+    if (win === true) return;
     console.log(win);
-    if(win) return;
+
 
     if (currentGamer === 'X') {
         computerMove();
-        
+
     } else {
         currentGamer = 'O';
-    }; 
+    };
 
-    
+
     this.removeEventListener('click', assignValueCell);
-    
+
 };
 
 
 function winningCombination() {
-
+    if (win === true) return;
     let matrix = field.matrixField;
 
     function winningCombinationRow() {
-        debugger;
+        if (win === true) return;
         let rowCurrentCell = [];
-        
+
         for (let i = 0; i < matrix.length; i++) {
             for (let j = 0; j < matrix[i].length; j++) {
                 rowCurrentCell.push(matrix[i][j].innerHTML);
@@ -95,11 +100,12 @@ function winningCombination() {
             }
 
             rowCurrentCell = [];
-           
+
         }
     }
 
     function winningCombinationCol() {
+        if (win === true) return;
         let colCurrentCell = [];
 
         for (let i = 0; i < matrix.length; i++) {
@@ -130,6 +136,7 @@ function winningCombination() {
     }
 
     function winningCombinationMainAxis() {
+        if (win === true) return;
         let mainAxisCurrentCell = [];
 
         for (let i = 0; i < matrix.length; i++) {
@@ -159,6 +166,7 @@ function winningCombination() {
     }
 
     function winningCombinationSecondAxis() {
+        if (win === true) return;
         let secondAxisCurrentCell = [];
 
         for (let i = 0; i < matrix.length; i++) {
@@ -187,8 +195,8 @@ function winningCombination() {
         secondAxisCurrentCell = [];
     }
 
-    winningCombinationCol();
     winningCombinationRow();
+    winningCombinationCol();
     winningCombinationMainAxis();
     winningCombinationSecondAxis();
 }
@@ -212,6 +220,7 @@ function getRndInteger(max) {
 }
 
 function computerMove() {
+
     let matrix = field.matrixField;
     let maxNumber = field.matrixField.length - 1;
     let i = getRndInteger(maxNumber);
@@ -219,6 +228,12 @@ function computerMove() {
 
     if (matrix[i][j].innerHTML === '') {
         matrix[i][j].innerHTML = 'O';
+        //currentGamer = 'O';
+
+        /*  let event = new Event("click");
+         matrix[i][j].dispatchEvent(event); */
+
+
     } else {
         computerMove();
     }
