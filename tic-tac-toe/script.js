@@ -1,8 +1,11 @@
-
 let currentGamer = 'X';
 let win = false;
 const button = document.querySelector('#button');
 let field;
+let inputValueO = document.querySelector('#currentO');
+let inputValueX = document.querySelector('#currentX');
+let numX = 1;
+let numO = 1;
 
 class Field {
     constructor() {
@@ -63,7 +66,7 @@ function fillCell() {
 }
 
 function assignValueCell() {
-
+    setCalcX(inputValueX);
     this.innerHTML = currentGamer;
     winningCombination();
 
@@ -78,7 +81,6 @@ function assignValueCell() {
 
     this.removeEventListener('click', assignValueCell);
 };
-
 
 function winningCombination() {
     if (win === true) return;
@@ -256,6 +258,7 @@ function computerMove() {
 
     if (matrix[i][j].innerHTML === '') {
         matrix[i][j].innerHTML = 'O';
+        setCalcO(inputValueO);
     } else {
         computerMove();
     }
@@ -276,6 +279,33 @@ function showResetGame() {
     });
 }
 
-//showResetGame();
+function setCalcX (elem) {  
+    elem.value = numX;
+    numX++; 
+}
+
+function setCalcO (elem) {  
+    elem.value = numO;
+    numO++; 
+}
+
+console.log(`
+Ваша отметка - 40 балла(ов)
+Отзыв по пунктам ТЗ:
+Не выполненные/не засчитанные пункты:
+1) Результаты последних 10 игр сохраняются в local storage. Есть таблица рекордов, в которой отображаются результаты предыдущих 10 игр
+2) Анимации или звуки, или настройки игры. Баллы начисляются за любой из перечисленных пунктов
+3) Очень высокое качество оформления приложения и/или дополнительный не предусмотренный в задании функционал, улучшающий качество приложения
+
+
+Все оставшиеся пункты выполнены и не имеют комментариев проверяющего.
+
+`);
+
+
+
+
+
+
 
 
