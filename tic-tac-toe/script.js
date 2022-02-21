@@ -33,26 +33,24 @@ class Field {
         fillCell();
     }
 
-    removeMatrixField() { 
+    removeMatrixField() {
         if (document.querySelector('table')) {
             document.querySelector('table').remove();
             this.matrixField = [];
         }
-     }
+    }
 }
 
 field = new Field();
 field.fillMatrixField();
 
 button.addEventListener('click', function func() {
-    debugger;
     field.removeMatrixField();
     const col = document.querySelector('#col');
     const row = document.querySelector('#row');
 
     let valueCol = col.value;
     let valueRow = row.value;
-
 
     field.fillMatrixField(valueRow, valueCol);
 });
@@ -85,8 +83,6 @@ function assignValueCell() {
 function winningCombination() {
     if (win === true) return;
     let matrix = field.matrixField;
-    console.log(field);
-    console.log(field.matrixField);
 
     function winningCombinationRow() {
         if (win === true) return;
@@ -119,6 +115,7 @@ function winningCombination() {
                 });
 
                 removeListener();
+                showResetGame();
                 return;
             }
 
@@ -154,6 +151,8 @@ function winningCombination() {
                 }
 
                 removeListener();
+                showResetGame();
+                return;
             }
 
             colCurrentCell = [];
@@ -187,6 +186,8 @@ function winningCombination() {
             }
 
             removeListener();
+            showResetGame();
+            return;
         }
 
         mainAxisCurrentCell = [];
@@ -219,6 +220,8 @@ function winningCombination() {
             }
 
             removeListener();
+            showResetGame();
+            return;
         }
 
         secondAxisCurrentCell = [];
@@ -258,6 +261,21 @@ function computerMove() {
     }
 }
 
+function showResetGame() {
+    const windowReset = document.createElement('button');
+    windowReset.setAttribute('id', 'restart');
+    document.body.append(windowReset);
+    windowReset.style.fontSize = '30px';
+    windowReset.style.color = 'red';
+    windowReset.innerHTML = 'Возобновить игру?';
 
+    windowReset.addEventListener('click', function () {
+        field.removeMatrixField();
+        windowReset.style.display = 'none';
+        window.location.reload();
+    });
+}
+
+//showResetGame();
 
 

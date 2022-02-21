@@ -13,6 +13,7 @@ body {
     flex-direction: column;
     justify-content: center;  /* vertical alignment */
     align-items: center;      /* horizontal alignment */
+    position: relative;
     background-color: lightyellow;
     height: 100vh;
 }
@@ -40,4 +41,10 @@ input {
 .winner {
     color: red;
     font-size: 40px;
+}
+
+#restart {
+    position: absolute;
+    top: 35%;
+    left: 43%;
 }
