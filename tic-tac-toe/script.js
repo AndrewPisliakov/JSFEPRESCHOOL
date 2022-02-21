@@ -1,24 +1,25 @@
 
 let currentGamer = 'X';
 let win = false;
+const button = document.querySelector('#button');
+let field;
 
 class Field {
-    constructor(row, col) {
-        this.row = row;
-        this.col = col;
+    constructor() {
         this.matrixField = [];
     }
     // создаем и отрисовываем игровое поле
-    fillMatrixField() {
+    fillMatrixField(row = 3, col = 3) {
+
         const table = document.createElement('table');
         table.setAttribute('id', 'table');
         document.body.prepend(table);
 
-        for (let i = 0; i < this.row; i++) {
+        for (let i = 0; i < row; i++) {
             let str = [];
             let tr = document.createElement('tr');
 
-            for (let j = 0; j < this.col; j++) {
+            for (let j = 0; j < col; j++) {
                 let td = document.createElement('td');
                 tr.append(td);
                 str.push(td);
@@ -31,12 +32,30 @@ class Field {
 
         fillCell();
     }
+
+    removeMatrixField() { 
+        if (document.querySelector('table')) {
+            document.querySelector('table').remove();
+            this.matrixField = [];
+        }
+     }
 }
 
-
-
-let field = new Field(3, 3);
+field = new Field();
 field.fillMatrixField();
+
+button.addEventListener('click', function func() {
+    debugger;
+    field.removeMatrixField();
+    const col = document.querySelector('#col');
+    const row = document.querySelector('#row');
+
+    let valueCol = col.value;
+    let valueRow = row.value;
+
+
+    field.fillMatrixField(valueRow, valueCol);
+});
 
 function fillCell() {
     let cells = getCells();
@@ -45,32 +64,29 @@ function fillCell() {
     });
 }
 
-
 function assignValueCell() {
-    
+
     this.innerHTML = currentGamer;
-
     winningCombination();
-    if (win === true) return;
-    console.log(win);
 
+    if (win === true) return;
 
     if (currentGamer === 'X') {
         computerMove();
-
+        winningCombination();
     } else {
-        currentGamer = 'O';
+        currentGamer = 'X';
     };
 
-
     this.removeEventListener('click', assignValueCell);
-
 };
 
 
 function winningCombination() {
     if (win === true) return;
     let matrix = field.matrixField;
+    console.log(field);
+    console.log(field.matrixField);
 
     function winningCombinationRow() {
         if (win === true) return;
@@ -86,21 +102,27 @@ function winningCombination() {
                     return true;
                 }
             });
+
             let checkRowO = rowCurrentCell.every((cell) => {
                 if (cell === 'O') {
                     return true;
                 }
             });
 
+
             if (checkRowX || checkRowO) {
                 win = true;
-                alert('winner');
-                removeListener();
 
+                let currentArrCells = matrix[i];
+                currentArrCells.forEach((elem) => {
+                    elem.classList.add('winner');
+                });
+
+                removeListener();
+                return;
             }
 
             rowCurrentCell = [];
-
         }
     }
 
@@ -126,7 +148,10 @@ function winningCombination() {
 
             if (checkColX || checkColO) {
                 win = true;
-                alert('winner');
+
+                for (let j = 0; j < matrix[i].length; j++) {
+                    matrix[j][i].classList.add('winner');
+                }
 
                 removeListener();
             }
@@ -156,13 +181,15 @@ function winningCombination() {
 
         if (checkMainAxisX || checkMainAxisO) {
             win = true;
-            alert('winner');
+
+            for (let i = 0; i < matrix.length; i++) {
+                matrix[i][i].classList.add('winner');
+            }
 
             removeListener();
         }
 
         mainAxisCurrentCell = [];
-
     }
 
     function winningCombinationSecondAxis() {
@@ -187,7 +214,9 @@ function winningCombination() {
 
         if (checSecondAxisX || checkSecondAxisO) {
             win = true;
-            alert('winner');
+            for (let i = 0; i < matrix.length; i++) {
+                matrix[i][matrix[i].length - 1 - i].classList.add('winner');
+            }
 
             removeListener();
         }
@@ -201,7 +230,6 @@ function winningCombination() {
     winningCombinationSecondAxis();
 }
 
-
 function getCells() {
     return document.querySelectorAll('td');
 }
@@ -213,14 +241,11 @@ function removeListener() {
     });
 }
 
-
-
 function getRndInteger(max) {
     return Math.floor(Math.random() * (max - 0 + 1)) + 0;
 }
 
 function computerMove() {
-
     let matrix = field.matrixField;
     let maxNumber = field.matrixField.length - 1;
     let i = getRndInteger(maxNumber);
@@ -228,18 +253,11 @@ function computerMove() {
 
     if (matrix[i][j].innerHTML === '') {
         matrix[i][j].innerHTML = 'O';
-        //currentGamer = 'O';
-
-        /*  let event = new Event("click");
-         matrix[i][j].dispatchEvent(event); */
-
-
     } else {
         computerMove();
     }
 }
 
 
-//setInterval( () => { console.log(currentGamer) }, 3000);
 
 
