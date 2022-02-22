@@ -4,6 +4,8 @@ const button = document.querySelector('#button');
 let field;
 let inputValueO = document.querySelector('#currentO');
 let inputValueX = document.querySelector('#currentX');
+let buttonRestart = document.querySelector('#restart');
+console.log(buttonRestart);
 let numX = 1;
 let numO = 1;
 
@@ -288,6 +290,10 @@ function setCalcO (elem) {
     elem.value = numO;
     numO++; 
 }
+
+buttonRestart.addEventListener('click', function() {
+    window.location.reload();
+})
 
 console.log(`
 Ваша отметка - 40 балла(ов)

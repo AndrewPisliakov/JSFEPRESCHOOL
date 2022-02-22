@@ -132,3 +132,20 @@ textarea::placeholder {
     font-size: 20px;
     color: #BDAE82;
 }
+
+#restart {
+    position: relative;
+    top: -10px;
+    left: 134px;
+    padding: 10px;
+    background-color: none;
+    color: #BDAE82;
+    font-size: 16px;
+    cursor: pointer;
+    
+   /*  margin-bottom: 10px; */
+}
+
+#restart:hover{
+    background-color: brown;
+}
