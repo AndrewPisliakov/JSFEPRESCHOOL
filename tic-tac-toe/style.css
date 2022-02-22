@@ -37,6 +37,7 @@ input {
 }
 
 .wrapper-input {
+    position: relative;
     margin-top: 20px;
 }
 
@@ -45,12 +46,11 @@ input {
     font-size: 40px;
 }
 
-#restart {
-    position: absolute;
-    top: 35%;
-    left: 43%;
+#restart  {
+     position: absolute;
+    top: 23%;
+    left: 43%; 
 }
-
 
 footer {
     position: absolute;
@@ -133,19 +133,19 @@ textarea::placeholder {
     color: #BDAE82;
 }
 
-#restart {
+#restartGame {
     position: relative;
     top: -10px;
     left: 134px;
     padding: 10px;
-    background-color: none;
+    background: transparent;
+    border: 1px #BDAE82 solid;
+    border-radius: 2px;
     color: #BDAE82;
     font-size: 16px;
     cursor: pointer;
-    
-   /*  margin-bottom: 10px; */
-}
+} 
 
-#restart:hover{
+#restartGame:hover{
     background-color: brown;
 }

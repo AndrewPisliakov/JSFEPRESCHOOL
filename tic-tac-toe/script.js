@@ -4,7 +4,7 @@ const button = document.querySelector('#button');
 let field;
 let inputValueO = document.querySelector('#currentO');
 let inputValueX = document.querySelector('#currentX');
-let buttonRestart = document.querySelector('#restart');
+let buttonRestart = document.querySelector('#restartGame');
 console.log(buttonRestart);
 let numX = 1;
 let numO = 1;
@@ -269,7 +269,7 @@ function computerMove() {
 function showResetGame() {
     const windowReset = document.createElement('button');
     windowReset.setAttribute('id', 'restart');
-    document.body.append(windowReset);
+    document.body.prepend(windowReset);
     windowReset.style.fontSize = '30px';
     windowReset.style.color = 'red';
     windowReset.innerHTML = 'Возобновить игру?';
@@ -279,7 +279,7 @@ function showResetGame() {
         windowReset.style.display = 'none';
         window.location.reload();
     });
-}
+} 
 
 function setCalcX (elem) {  
     elem.value = numX;
