@@ -1,2 +1,1 @@
-# first-quantum-mind-JSFEPRESCHOOL
-Private repository for @first-quantum-mind
+my project in gh-pages branch
