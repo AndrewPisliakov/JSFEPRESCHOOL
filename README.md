@@ -1,2 +1,2 @@
-# first-quantum-mind-JSFEPRESCHOOL
-Private repository for @first-quantum-mind
+# View in gh-pages
+
